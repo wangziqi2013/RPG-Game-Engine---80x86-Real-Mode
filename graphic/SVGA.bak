@@ -1,0 +1,215 @@
+
+/*****************************************************/
+/* The constructor will allocate memory for SVGA      */
+/*****************************************************/
+SVGA::SVGA() : xmsbuffer(300)       /* 640*480 is exactly 300 * 1024 Bytes. 4.68 Segments */
+{
+ return;
+}
+
+
+
+/******************************************************/
+/* This function will initialize the graphic mode to  */
+/* 640*480 @ 256 color mode                         	   */
+/* It's not a general purpose function, so I only     */
+/* focus on this mode.                              		   */
+/******************************************************/
+/* Notice: This routine will not be automatically     */
+/* called. Because sometimes we need to init it later */
+/******************************************************/
+void SVGA::Init()
+{
+ asm push ax
+
+ asm mov ah, 04fh   //function number
+ asm mov al, 02   //to set graphic mode
+ asm mov bx, 101h  //640*480 @ 256
+ asm int 10h
+
+ asm pop ax
+
+ page = 0;          //This is the initial page ( = 0 )
+}
+
+
+
+
+/***************************************************************/
+/* This function will draw a block on the screen under SVGA    */
+/* 640*480 @ 256 mode.                                  				   */
+/* Because hardware page switch will take much time(very slow) */
+/* so anytime it's possible to reach the 64kb segment boundry  */
+/* we'll check first and then decide whether to switch page    */
+/***************************************************************/
+/* buffer : the linear repersentation of a block                   */
+/* x      : the x coordinate of the left top of the block      */
+/* y      :     y                                       				   */
+/* w         : width of the block (>=1)                     		   */
+/* h         : height                                   					   */
+/***************************************************************/
+/* For speed's sake this routine will not check any overflow   */
+/* And we'll copy byte by byte                              		   */
+/***************************************************************/
+
+
+void SVGA::DrawBlock(void far *buffer,int x,int y,int w,int h)
+{
+ unsigned long address;
+ unsigned short int newpage;
+ unsigned short int offset;
+ unsigned short int offset_bak;
+ unsigned short int line;
+ unsigned short int point;
+ unsigned short int total = 0;
+
+ unsigned char far *screen = (unsigned char far *)0xA0000000;
+
+ asm cli            //Draw routine may take long time so it's better to close interupt
+
+
+
+ address = x + ( (unsigned long)y << 9 ) + ( (unsigned long)y << 7 );
+
+ newpage = address >> 16;           //Each page is 65536 bytes, so divided by 65536 can be represented by >> 16
+ offset  = address & 0x0000FFFF;
+
+ if(page != newpage)
+ {
+  page = newpage;
+
+  asm push ax
+  asm push dx
+  asm mov ax, 4f05h
+  asm mov bx, 0
+  asm mov dx, word ptr [newpage]
+  asm int 10h
+  asm pop dx
+  asm pop ax
+ }
+
+ for( line = 0 ; line < h ; line++ )
+ {
+  for( point = 0;point < w ; point++ )
+  {
+    screen[offset++] = ((unsigned char far *)buffer)[total++];
+    if(offset == 0x0000)
+    {
+     page++;
+     newpage++;
+     asm push ax
+     asm push dx
+     asm mov ax, 4f05h
+     asm mov bx, 0
+     asm mov dx, word ptr [newpage]
+     asm int 10h
+     asm pop dx
+     asm pop ax
+    }
+  }//for(point)
+  offset_bak = offset;     //make a backup for later comparison
+  offset += (640 - w);      //We let offset first rewind back to the start of the line and then
+                                    //go to next line
+  if(offset < offset_bak)  //Addition overflow indicates that the 64kb page has reached
+  {
+    page++;
+    newpage++;
+    asm push ax
+    asm push dx
+    asm mov ax, 4f05h
+    asm mov bx, 0
+    asm mov dx, word ptr [newpage]
+    asm int 10h
+    asm pop dx
+    asm pop ax
+  }
+ }//for(line)
+
+ asm sti
+}
+
+
+
+void SVGA::DrawPixel(unsigned char color,int x,int y)
+{
+ unsigned char far *screen = (unsigned char far *)0xA0000000;
+
+ unsigned long pixel;
+ unsigned short newpage;
+ unsigned short offset;
+
+ pixel   = x + ((unsigned long)y << 9) + ((unsigned long)y << 7);   //640 = 512(2^9) + 128(2^7)
+ newpage = pixel >> 16;
+ offset  = pixel & 0x0000FFFF;
+
+ if(newpage != page)
+ {
+  asm push ax
+  asm push dx
+  asm mov ax, 4f05h
+  asm mov bx, 0
+  asm mov dx, word ptr [newpage]
+  asm int 10h
+  asm pop dx
+  asm pop ax
+
+  page = newpage;
+ }
+ screen[offset] = color;
+
+}
+
+
+void SVGA::ChangePage(int page)
+{
+ asm push ax
+ asm push dx
+ asm push bx
+ asm mov ax, 4f05h
+ asm mov bx, 0h
+ asm mov dx, [page]             /* DX = Page. Page starts from 0 */
+ asm int 10h
+ asm pop bx
+ asm pop dx
+ asm pop ax
+}
+
+
+/*****************************************************/
+/* This function will flush a whole screen buffer    */
+/* into real SVGA video memory                      	  */
+/*****************************************************/
+void SVGA::Flush()
+{
+ /* The 5th segment we only need to transfer 45056 bytes */
+ /* For seppd's sake we'll not use a for loop */
+ /* But the page changing is slow, so a function call is ok */
+ ChangePage(0);
+ xmsbuffer.OuttoNor((unsigned char far *)0xA0000000,0L,65536L);
+ ChangePage(1);
+ xmsbuffer.OuttoNor((unsigned char far *)0xA0000000,65536L,65536L);
+ ChangePage(2);
+ xmsbuffer.OuttoNor((unsigned char far *)0xA0000000,65536L*2,65536L);
+ ChangePage(3);
+ xmsbuffer.OuttoNor((unsigned char far *)0xA0000000,65536L*3,65536L);
+ ChangePage(4);
+ xmsbuffer.OuttoNor((unsigned char far *)0xA0000000,65536L*4,45056L);
+
+}
+
+
+void SVGA::DrawLine(unsigned char color,int x,int y,int xx,int yy)
+{
+
+}
+
+
+void SVGA::Change(unsigned char mode)
+{
+
+}
+
+void SVGA::Exit()
+{
+
+}

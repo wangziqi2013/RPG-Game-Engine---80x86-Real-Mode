@@ -1,0 +1,1852 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0EC81H 0EC82H _TEXT              CODE
+ 0EC90H 0F24FH 005C0H E87_PROG           CODE
+ 0F250H 119BFH 02770H EMU_PROG           CODE
+ 119C0H 119C0H 00000H _FARDATA           FAR_DATA
+ 119C0H 119C0H 00000H _FARBSS            FAR_BSS
+ 119C0H 119C0H 00000H _OVERLAY_          OVRINFO
+ 119C0H 119C0H 00000H _1STUB_            STUBSEG
+ 119C0H 12CE3H 01324H _DATA              DATA
+ 12CE4H 12CE7H 00004H _CVTSEG            DATA
+ 12CE8H 12CEDH 00006H _SCNSEG            DATA
+ 12CEEH 12CEEH 00000H _CONST             CONST
+ 12CEEH 12D0BH 0001EH _INIT_             INITDATA
+ 12D0CH 12D0CH 00000H _INITEND_          INITDATA
+ 12D0CH 12D17H 0000CH _EXIT_             EXITDATA
+ 12D18H 12D18H 00000H _EXITEND_          EXITDATA
+ 12D18H 12D93H 0007CH _BSS               BSS
+ 12D94H 12D94H 00000H _BSSEND            BSSEND
+ 12DA0H 12ED0H 00131H _STACK             STACK
+
+
+Detailed map of segments
+
+ 0000:0000 0263 C=CODE   S=_TEXT          G=(none)  M=c0.asm     ACBP=28
+ 0000:0263 5F1C C=CODE   S=_TEXT          G=(none)  M=TEST.CPP   ACBP=28
+ 0000:617F 0000 C=CODE   S=_TEXT          G=(none)  M=e87trap    ACBP=28
+ 0000:617F 026B C=CODE   S=_TEXT          G=(none)  M=fpinit     ACBP=28
+ 0000:63EA 0000 C=CODE   S=_TEXT          G=(none)  M=deflt87    ACBP=28
+ 0000:63EA 0000 C=CODE   S=_TEXT          G=(none)  M=protflag   ACBP=28
+ 0000:63EA 01D2 C=CODE   S=_TEXT          G=(none)  M=realcvt2   ACBP=28
+ 0000:65BC 0210 C=CODE   S=_TEXT          G=(none)  M=xcvt       ACBP=28
+ 0000:67CC 000B C=CODE   S=_TEXT          G=(none)  M=pow10d     ACBP=28
+ 0000:67D7 00CB C=CODE   S=_TEXT          G=(none)  M=_pow10     ACBP=28
+ 0000:68A2 0091 C=CODE   S=_TEXT          G=(none)  M=fperr      ACBP=28
+ 0000:6933 002C C=CODE   S=_TEXT          G=(none)  M=nftol      ACBP=28
+ 0000:695F 0039 C=CODE   S=_TEXT          G=(none)  M=_stpcpy    ACBP=28
+ 0000:6998 0028 C=CODE   S=_TEXT          G=(none)  M=memcmp     ACBP=28
+ 0000:69C0 0024 C=CODE   S=_TEXT          G=(none)  M=memcpy     ACBP=28
+ 0000:69E4 0047 C=CODE   S=_TEXT          G=(none)  M=memset     ACBP=28
+ 0000:6A2B 0076 C=CODE   S=_TEXT          G=(none)  M=movmem     ACBP=28
+ 0000:6AA1 003F C=CODE   S=_TEXT          G=(none)  M=strcat     ACBP=28
+ 0000:6AE0 0030 C=CODE   S=_TEXT          G=(none)  M=strcmp     ACBP=28
+ 0000:6B10 0021 C=CODE   S=_TEXT          G=(none)  M=strlen     ACBP=28
+ 0000:6B31 0000 C=CODE   S=_TEXT          G=(none)  M=files      ACBP=28
+ 0000:6B31 0000 C=CODE   S=_TEXT          G=(none)  M=files2     ACBP=28
+ 0000:6B31 0000 C=CODE   S=_TEXT          G=(none)  M=fmode      ACBP=28
+ 0000:6B31 00B6 C=CODE   S=_TEXT          G=(none)  M=mkname     ACBP=28
+ 0000:6BE7 009C C=CODE   S=_TEXT          G=(none)  M=setupio    ACBP=28
+ 0000:6C83 0028 C=CODE   S=_TEXT          G=(none)  M=xclose     ACBP=28
+ 0000:6CAB 0045 C=CODE   S=_TEXT          G=(none)  M=dosfattr   ACBP=28
+ 0000:6CF0 0052 C=CODE   S=_TEXT          G=(none)  M=ioerror    ACBP=28
+ 0000:6D42 0015 C=CODE   S=_TEXT          G=(none)  M=isatty     ACBP=28
+ 0000:6D57 002D C=CODE   S=_TEXT          G=(none)  M=lseek      ACBP=28
+ 0000:6D84 004D C=CODE   S=_TEXT          G=(none)  M=reada      ACBP=28
+ 0000:6DD1 04FD C=CODE   S=_TEXT          G=(none)  M=scanner    ACBP=28
+ 0000:72CE 001C C=CODE   S=_TEXT          G=(none)  M=unlink     ACBP=28
+ 0000:72EA 04DB C=CODE   S=_TEXT          G=(none)  M=vprinter   ACBP=28
+ 0000:77C5 002A C=CODE   S=_TEXT          G=(none)  M=close      ACBP=28
+ 0000:77EF 00B8 C=CODE   S=_TEXT          G=(none)  M=fclose     ACBP=28
+ 0000:78A7 00CA C=CODE   S=_TEXT          G=(none)  M=fflush     ACBP=28
+ 0000:7971 004A C=CODE   S=_TEXT          G=(none)  M=flushall   ACBP=28
+ 0000:79BB 0081 C=CODE   S=_TEXT          G=(none)  M=flushout   ACBP=28
+ 0000:7A3C 021D C=CODE   S=_TEXT          G=(none)  M=fopen      ACBP=28
+ 0000:7C59 0020 C=CODE   S=_TEXT          G=(none)  M=fprintf    ACBP=28
+ 0000:7C79 0053 C=CODE   S=_TEXT          G=(none)  M=fputs      ACBP=28
+ 0000:7CCC 01B1 C=CODE   S=_TEXT          G=(none)  M=fread      ACBP=28
+ 0000:7E7D 0028 C=CODE   S=_TEXT          G=(none)  M=fscanf     ACBP=28
+ 0000:7EA5 01E2 C=CODE   S=_TEXT          G=(none)  M=fseek      ACBP=28
+ 0000:8087 0089 C=CODE   S=_TEXT          G=(none)  M=perror     ACBP=28
+ 0000:8110 001F C=CODE   S=_TEXT          G=(none)  M=printf     ACBP=28
+ 0000:812F 03AA C=CODE   S=_TEXT          G=(none)  M=putc       ACBP=28
+ 0000:84D9 0115 C=CODE   S=_TEXT          G=(none)  M=setvbuf    ACBP=28
+ 0000:85EE 008E C=CODE   S=_TEXT          G=(none)  M=sprintf    ACBP=28
+ 0000:867C 015E C=CODE   S=_TEXT          G=(none)  M=write      ACBP=28
+ 0000:87DA 0040 C=CODE   S=_TEXT          G=(none)  M=xfclose    ACBP=28
+ 0000:881A 003D C=CODE   S=_TEXT          G=(none)  M=xfflush    ACBP=28
+ 0000:8857 0021 C=CODE   S=_TEXT          G=(none)  M=chmoda     ACBP=28
+ 0000:8878 0032 C=CODE   S=_TEXT          G=(none)  M=closea     ACBP=28
+ 0000:88AA 007D C=CODE   S=_TEXT          G=(none)  M=eof        ACBP=28
+ 0000:8927 01D8 C=CODE   S=_TEXT          G=(none)  M=getc       ACBP=28
+ 0000:8AFF 01BB C=CODE   S=_TEXT          G=(none)  M=open       ACBP=28
+ 0000:8CBA 006B C=CODE   S=_TEXT          G=(none)  M=opena      ACBP=28
+ 0000:8D25 00C9 C=CODE   S=_TEXT          G=(none)  M=read       ACBP=28
+ 0000:8DEE 006F C=CODE   S=_TEXT          G=(none)  M=ungetc     ACBP=28
+ 0000:8E5D 005A C=CODE   S=_TEXT          G=(none)  M=writea     ACBP=28
+ 0000:8EB7 002D C=CODE   S=_TEXT          G=(none)  M=ioctl      ACBP=28
+ 0000:8EE4 000A C=CODE   S=_TEXT          G=(none)  M=cconv      ACBP=28
+ 0000:8EEE 0000 C=CODE   S=_TEXT          G=(none)  M=ctype      ACBP=28
+ 0000:8EEE 00AE C=CODE   S=_TEXT          G=(none)  M=h_ldiv     ACBP=28
+ 0000:8F9C 0021 C=CODE   S=_TEXT          G=(none)  M=h_llsh     ACBP=28
+ 0000:8FBD 0017 C=CODE   S=_TEXT          G=(none)  M=n_lxmul    ACBP=28
+ 0000:8FD4 003E C=CODE   S=_TEXT          G=(none)  M=rand       ACBP=28
+ 0000:9012 00A6 C=CODE   S=_TEXT          G=(none)  M=longtoa    ACBP=28
+ 0000:90B8 01D1 C=CODE   S=_TEXT          G=(none)  M=scantol    ACBP=28
+ 0000:9289 0000 C=CODE   S=_TEXT          G=(none)  M=fpstklen   ACBP=28
+ 0000:9289 001F C=CODE   S=_TEXT          G=(none)  M=cvtfak     ACBP=28
+ 0000:92A8 0004 C=CODE   S=_TEXT          G=(none)  M=realcvt    ACBP=28
+ 0000:92AC 000C C=CODE   S=_TEXT          G=(none)  M=scantod    ACBP=28
+ 0000:92B8 0000 C=CODE   S=_TEXT          G=(none)  M=stklen     ACBP=28
+ 0000:92B8 0014 C=CODE   S=_TEXT          G=(none)  M=del        ACBP=28
+ 0000:92CC 0014 C=CODE   S=_TEXT          G=(none)  M=delarray   ACBP=28
+ 0000:92E0 02BD C=CODE   S=_TEXT          G=(none)  M=new        ACBP=28
+ 0000:959D 0010 C=CODE   S=_TEXT          G=(none)  M=newarray   ACBP=28
+ 0000:95AD 0051 C=CODE   S=_TEXT          G=(none)  M=newf       ACBP=28
+ 0000:95FE 0014 C=CODE   S=_TEXT          G=(none)  M=newfarry   ACBP=28
+ 0000:9612 02B9 C=CODE   S=_TEXT          G=(none)  M=vnewf      ACBP=28
+ 0000:98CB 042D C=CODE   S=_TEXT          G=(none)  M=farheap    ACBP=28
+ 0000:9CF8 015E C=CODE   S=_TEXT          G=(none)  M=fbrk       ACBP=28
+ 0000:9E56 0020 C=CODE   S=_TEXT          G=(none)  M=setblock   ACBP=28
+ 0000:9E76 0060 C=CODE   S=_TEXT          G=(none)  M=h_padd     ACBP=28
+ 0000:9ED6 0021 C=CODE   S=_TEXT          G=(none)  M=n_pcmp     ACBP=28
+ 0000:9EF7 001C C=CODE   S=_TEXT          G=(none)  M=n_scopy    ACBP=28
+ 0000:9F13 0026 C=CODE   S=_TEXT          G=(none)  M=errormsg   ACBP=28
+ 0000:9F39 003C C=CODE   S=_TEXT          G=(none)  M=pureerr    ACBP=28
+ 0000:9F75 005C C=CODE   S=_TEXT          G=(none)  M=cputype    ACBP=28
+ 0000:9FD1 0010 C=CODE   S=_TEXT          G=(none)  M=abort      ACBP=28
+ 0000:9FE1 0028 C=CODE   S=_TEXT          G=(none)  M=atexit     ACBP=28
+ 0000:A009 00A0 C=CODE   S=_TEXT          G=(none)  M=exit       ACBP=28
+ 0000:A0A9 0000 C=CODE   S=_TEXT          G=(none)  M=sigdata    ACBP=28
+ 0000:A0A9 0017 C=CODE   S=_TEXT          G=(none)  M=_abort     ACBP=28
+ 0000:A0C0 0028 C=CODE   S=_TEXT          G=(none)  M=getvect    ACBP=28
+ 0000:A0E8 0367 C=CODE   S=_TEXT          G=(none)  M=signal     ACBP=28
+ 0000:A44F 0056 C=CODE   S=_TEXT          G=(none)  M=xxa        ACBP=28
+ 0000:A4A5 025A C=CODE   S=_TEXT          G=(none)  M=xxv        ACBP=28
+ 0000:A6FF 01E9 C=CODE   S=_TEXT          G=(none)  M=xalloc     ACBP=28
+ 0000:A8E8 0381 C=CODE   S=_TEXT          G=(none)  M=xmsg       ACBP=28
+ 0000:AC69 309C C=CODE   S=_TEXT          G=(none)  M=xx         ACBP=28
+ 0000:DD05 0085 C=CODE   S=_TEXT          G=(none)  M=xxas       ACBP=28
+ 0000:DD8A 0136 C=CODE   S=_TEXT          G=(none)  M=ctor2      ACBP=28
+ 0000:DEC0 02CA C=CODE   S=_TEXT          G=(none)  M=ctor3      ACBP=28
+ 0000:E18A 0AF8 C=CODE   S=_TEXT          G=(none)  M=strings    ACBP=28
+ 0EC9:0000 01E1 C=CODE   S=E87_PROG       G=(none)  M=e87trap    ACBP=68
+ 0EC9:01F0 0000 C=CODE   S=E87_PROG       G=(none)  M=fpinit     ACBP=68
+ 0EC9:01F0 03D0 C=CODE   S=E87_PROG       G=(none)  M=emu087     ACBP=68
+ 0F25:0000 2764 C=CODE   S=EMU_PROG       G=(none)  M=emu086     ACBP=68
+ 0F25:2770 0000 C=CODE   S=EMU_PROG       G=(none)  M=fpinit     ACBP=68
+ 119C:0000 0000 C=FAR_DATA S=_FARDATA       G=(none)  M=c0.asm     ACBP=68
+ 119C:0000 0000 C=FAR_BSS S=_FARBSS        G=(none)  M=c0.asm     ACBP=68
+ 119C:0000 0000 C=OVRINFO S=_OVERLAY_      G=(none)  M=c0.asm     ACBP=68
+ 119C:0000 0000 C=STUBSEG S=_1STUB_        G=(none)  M=c0.asm     ACBP=68
+ 119C:0000 0090 C=DATA   S=_DATA          G=DGROUP  M=c0.asm     ACBP=68
+ 119C:0090 07D7 C=DATA   S=_DATA          G=DGROUP  M=TEST.CPP   ACBP=48
+ 119C:0870 0000 C=DATA   S=_DATA          G=DGROUP  M=e87trap    ACBP=68
+ 119C:0870 0002 C=DATA   S=_DATA          G=DGROUP  M=fpinit     ACBP=68
+ 119C:0872 0002 C=DATA   S=_DATA          G=DGROUP  M=deflt87    ACBP=48
+ 119C:0874 0004 C=DATA   S=_DATA          G=DGROUP  M=protflag   ACBP=48
+ 119C:0878 0000 C=DATA   S=_DATA          G=DGROUP  M=realcvt2   ACBP=48
+ 119C:0878 0000 C=DATA   S=_DATA          G=DGROUP  M=xcvt       ACBP=48
+ 119C:0878 0000 C=DATA   S=_DATA          G=DGROUP  M=pow10d     ACBP=48
+ 119C:0878 0080 C=DATA   S=_DATA          G=DGROUP  M=_pow10     ACBP=48
+ 119C:08F8 009A C=DATA   S=_DATA          G=DGROUP  M=fperr      ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=nftol      ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=_stpcpy    ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=memcmp     ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=memcpy     ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=memset     ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=movmem     ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=strcat     ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=strcmp     ACBP=48
+ 119C:0992 0000 C=DATA   S=_DATA          G=DGROUP  M=strlen     ACBP=48
+ 119C:0992 0190 C=DATA   S=_DATA          G=DGROUP  M=files      ACBP=48
+ 119C:0B22 002A C=DATA   S=_DATA          G=DGROUP  M=files2     ACBP=48
+ 119C:0B4C 0004 C=DATA   S=_DATA          G=DGROUP  M=fmode      ACBP=48
+ 119C:0B50 0009 C=DATA   S=_DATA          G=DGROUP  M=mkname     ACBP=48
+ 119C:0B5A 0000 C=DATA   S=_DATA          G=DGROUP  M=setupio    ACBP=48
+ 119C:0B5A 0000 C=DATA   S=_DATA          G=DGROUP  M=xclose     ACBP=48
+ 119C:0B5A 0000 C=DATA   S=_DATA          G=DGROUP  M=dosfattr   ACBP=48
+ 119C:0B5A 005B C=DATA   S=_DATA          G=DGROUP  M=ioerror    ACBP=48
+ 119C:0BB6 0000 C=DATA   S=_DATA          G=DGROUP  M=isatty     ACBP=48
+ 119C:0BB6 0000 C=DATA   S=_DATA          G=DGROUP  M=lseek      ACBP=48
+ 119C:0BB6 0000 C=DATA   S=_DATA          G=DGROUP  M=reada      ACBP=48
+ 119C:0BB6 0080 C=DATA   S=_DATA          G=DGROUP  M=scanner    ACBP=48
+ 119C:0C36 0000 C=DATA   S=_DATA          G=DGROUP  M=unlink     ACBP=48
+ 119C:0C36 0067 C=DATA   S=_DATA          G=DGROUP  M=vprinter   ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=close      ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fclose     ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fflush     ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=flushall   ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=flushout   ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fopen      ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fprintf    ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fputs      ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fread      ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fscanf     ACBP=48
+ 119C:0C9E 0000 C=DATA   S=_DATA          G=DGROUP  M=fseek      ACBP=48
+ 119C:0C9E 02D0 C=DATA   S=_DATA          G=DGROUP  M=perror     ACBP=48
+ 119C:0F6E 0000 C=DATA   S=_DATA          G=DGROUP  M=printf     ACBP=48
+ 119C:0F6E 0001 C=DATA   S=_DATA          G=DGROUP  M=putc       ACBP=48
+ 119C:0F70 0004 C=DATA   S=_DATA          G=DGROUP  M=setvbuf    ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=sprintf    ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=write      ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=xfclose    ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=xfflush    ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=chmoda     ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=closea     ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=eof        ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=getc       ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=open       ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=opena      ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=read       ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=ungetc     ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=writea     ACBP=48
+ 119C:0F74 0000 C=DATA   S=_DATA          G=DGROUP  M=ioctl      ACBP=48
+ 119C:0F74 003B C=DATA   S=_DATA          G=DGROUP  M=cconv      ACBP=48
+ 119C:0FB0 0101 C=DATA   S=_DATA          G=DGROUP  M=ctype      ACBP=48
+ 119C:10B2 0000 C=DATA   S=_DATA          G=DGROUP  M=h_ldiv     ACBP=48
+ 119C:10B2 0000 C=DATA   S=_DATA          G=DGROUP  M=h_llsh     ACBP=48
+ 119C:10B2 0000 C=DATA   S=_DATA          G=DGROUP  M=n_lxmul    ACBP=48
+ 119C:10B2 0004 C=DATA   S=_DATA          G=DGROUP  M=rand       ACBP=48
+ 119C:10B6 0000 C=DATA   S=_DATA          G=DGROUP  M=longtoa    ACBP=48
+ 119C:10B6 0000 C=DATA   S=_DATA          G=DGROUP  M=scantol    ACBP=48
+ 119C:10B6 0002 C=DATA   S=_DATA          G=DGROUP  M=fpstklen   ACBP=48
+ 119C:10B8 0031 C=DATA   S=_DATA          G=DGROUP  M=cvtfak     ACBP=48
+ 119C:10EA 0000 C=DATA   S=_DATA          G=DGROUP  M=realcvt    ACBP=48
+ 119C:10EA 0000 C=DATA   S=_DATA          G=DGROUP  M=scantod    ACBP=48
+ 119C:10EA 0002 C=DATA   S=_DATA          G=DGROUP  M=stklen     ACBP=48
+ 119C:10EC 0000 C=DATA   S=_DATA          G=DGROUP  M=del        ACBP=48
+ 119C:10EC 0000 C=DATA   S=_DATA          G=DGROUP  M=delarray   ACBP=48
+ 119C:10EC 0016 C=DATA   S=_DATA          G=DGROUP  M=new        ACBP=48
+ 119C:1102 0000 C=DATA   S=_DATA          G=DGROUP  M=newarray   ACBP=48
+ 119C:1102 0000 C=DATA   S=_DATA          G=DGROUP  M=newf       ACBP=48
+ 119C:1102 0000 C=DATA   S=_DATA          G=DGROUP  M=newfarry   ACBP=48
+ 119C:1102 0000 C=DATA   S=_DATA          G=DGROUP  M=vnewf      ACBP=48
+ 119C:1102 0000 C=DATA   S=_DATA          G=DGROUP  M=farheap    ACBP=48
+ 119C:1102 0002 C=DATA   S=_DATA          G=DGROUP  M=fbrk       ACBP=48
+ 119C:1104 0000 C=DATA   S=_DATA          G=DGROUP  M=setblock   ACBP=48
+ 119C:1104 0000 C=DATA   S=_DATA          G=DGROUP  M=h_padd     ACBP=48
+ 119C:1104 0000 C=DATA   S=_DATA          G=DGROUP  M=n_pcmp     ACBP=48
+ 119C:1104 0000 C=DATA   S=_DATA          G=DGROUP  M=n_scopy    ACBP=48
+ 119C:1104 0000 C=DATA   S=_DATA          G=DGROUP  M=errormsg   ACBP=48
+ 119C:1104 003A C=DATA   S=_DATA          G=DGROUP  M=pureerr    ACBP=48
+ 119C:113E 0002 C=DATA   S=_DATA          G=DGROUP  M=cputype    ACBP=48
+ 119C:1140 0000 C=DATA   S=_DATA          G=DGROUP  M=abort      ACBP=48
+ 119C:1140 0002 C=DATA   S=_DATA          G=DGROUP  M=atexit     ACBP=48
+ 119C:1142 0006 C=DATA   S=_DATA          G=DGROUP  M=exit       ACBP=48
+ 119C:1148 0000 C=DATA   S=_DATA          G=DGROUP  M=sigdata    ACBP=48
+ 119C:1148 001F C=DATA   S=_DATA          G=DGROUP  M=_abort     ACBP=48
+ 119C:1168 0000 C=DATA   S=_DATA          G=DGROUP  M=getvect    ACBP=48
+ 119C:1168 001C C=DATA   S=_DATA          G=DGROUP  M=signal     ACBP=48
+ 119C:1184 0000 C=DATA   S=_DATA          G=DGROUP  M=xxa        ACBP=48
+ 119C:1184 0128 C=DATA   S=_DATA          G=DGROUP  M=xxv        ACBP=48
+ 119C:12AC 0000 C=DATA   S=_DATA          G=DGROUP  M=xalloc     ACBP=48
+ 119C:12AC 0000 C=DATA   S=_DATA          G=DGROUP  M=xmsg       ACBP=48
+ 119C:12AC 0012 C=DATA   S=_DATA          G=DGROUP  M=xx         ACBP=48
+ 119C:12BE 0000 C=DATA   S=_DATA          G=DGROUP  M=xxas       ACBP=48
+ 119C:12BE 0000 C=DATA   S=_DATA          G=DGROUP  M=ctor2      ACBP=48
+ 119C:12BE 0000 C=DATA   S=_DATA          G=DGROUP  M=ctor3      ACBP=48
+ 119C:12BE 0066 C=DATA   S=_DATA          G=DGROUP  M=strings    ACBP=48
+ 119C:1324 0000 C=DATA   S=_CVTSEG        G=DGROUP  M=c0.asm     ACBP=48
+ 119C:1324 0002 C=DATA   S=_CVTSEG        G=DGROUP  M=realcvt2   ACBP=48
+ 119C:1326 0002 C=DATA   S=_CVTSEG        G=DGROUP  M=cvtfak     ACBP=48
+ 119C:1328 0000 C=DATA   S=_CVTSEG        G=DGROUP  M=realcvt    ACBP=48
+ 119C:1328 0000 C=DATA   S=_SCNSEG        G=DGROUP  M=c0.asm     ACBP=48
+ 119C:1328 0006 C=DATA   S=_SCNSEG        G=DGROUP  M=cvtfak     ACBP=48
+ 119C:132E 0000 C=DATA   S=_SCNSEG        G=DGROUP  M=scantod    ACBP=48
+ 119C:132E 0000 C=CONST  S=_CONST         G=DGROUP  M=c0.asm     ACBP=48
+ 119C:132E 0000 C=INITDATA S=_INIT_         G=DGROUP  M=c0.asm     ACBP=48
+ 119C:132E 0006 C=INITDATA S=_INIT_         G=DGROUP  M=TEST.CPP   ACBP=48
+ 119C:1334 0006 C=INITDATA S=_INIT_         G=DGROUP  M=fpinit     ACBP=48
+ 119C:133A 0006 C=INITDATA S=_INIT_         G=DGROUP  M=setupio    ACBP=48
+ 119C:1340 0006 C=INITDATA S=_INIT_         G=DGROUP  M=new        ACBP=48
+ 119C:1346 0006 C=INITDATA S=_INIT_         G=DGROUP  M=cputype    ACBP=48
+ 119C:134C 0000 C=INITDATA S=_INITEND_      G=DGROUP  M=c0.asm     ACBP=28
+ 119C:134C 0000 C=EXITDATA S=_EXIT_         G=DGROUP  M=c0.asm     ACBP=48
+ 119C:134C 0006 C=EXITDATA S=_EXIT_         G=DGROUP  M=fpinit     ACBP=48
+ 119C:1352 0006 C=EXITDATA S=_EXIT_         G=DGROUP  M=new        ACBP=48
+ 119C:1358 0000 C=EXITDATA S=_EXITEND_      G=DGROUP  M=c0.asm     ACBP=28
+ 119C:1358 0000 C=BSS    S=_BSS           G=DGROUP  M=c0.asm     ACBP=48
+ 119C:1358 0014 C=BSS    S=_BSS           G=DGROUP  M=TEST.CPP   ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=realcvt2   ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=xcvt       ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=_pow10     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=memcmp     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=memcpy     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=memset     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=movmem     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=strcat     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=strcmp     ACBP=48
+ 119C:136C 0000 C=BSS    S=_BSS           G=DGROUP  M=strlen     ACBP=48
+ 119C:136C 000D C=BSS    S=_BSS           G=DGROUP  M=mkname     ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=setupio    ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=dosfattr   ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=ioerror    ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=isatty     ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=lseek      ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=reada      ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=scanner    ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=unlink     ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=vprinter   ACBP=48
+ 119C:137A 0000 C=BSS    S=_BSS           G=DGROUP  M=fread      ACBP=48
+ 119C:137A 0001 C=BSS    S=_BSS           G=DGROUP  M=putc       ACBP=48
+ 119C:137C 0000 C=BSS    S=_BSS           G=DGROUP  M=chmoda     ACBP=48
+ 119C:137C 0000 C=BSS    S=_BSS           G=DGROUP  M=closea     ACBP=48
+ 119C:137C 0000 C=BSS    S=_BSS           G=DGROUP  M=eof        ACBP=48
+ 119C:137C 0001 C=BSS    S=_BSS           G=DGROUP  M=getc       ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=open       ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=opena      ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=read       ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=ungetc     ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=writea     ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=ioctl      ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=longtoa    ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=scantol    ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=new        ACBP=48
+ 119C:137E 0000 C=BSS    S=_BSS           G=DGROUP  M=setblock   ACBP=48
+ 119C:137E 0040 C=BSS    S=_BSS           G=DGROUP  M=atexit     ACBP=48
+ 119C:13BE 0002 C=BSS    S=_BSS           G=DGROUP  M=sigdata    ACBP=48
+ 119C:13C0 0000 C=BSS    S=_BSS           G=DGROUP  M=getvect    ACBP=48
+ 119C:13C0 0008 C=BSS    S=_BSS           G=DGROUP  M=signal     ACBP=48
+ 119C:13C8 0000 C=BSS    S=_BSS           G=DGROUP  M=xxa        ACBP=48
+ 119C:13C8 0004 C=BSS    S=_BSS           G=DGROUP  M=xxv        ACBP=48
+ 119C:13CC 0007 C=BSS    S=_BSS           G=DGROUP  M=xx         ACBP=48
+ 119C:13D4 0000 C=BSS    S=_BSS           G=DGROUP  M=xxas       ACBP=48
+ 119C:13D4 0000 C=BSSEND S=_BSSEND        G=DGROUP  M=c0.asm     ACBP=28
+ 12DA:0000 0131 C=STACK  S=_STACK         G=(none)  M=c0.asm     ACBP=74
+ 12DA:0000 0080 C=STACK  S=_STACK         G=(none)  M=emuvars    ACBP=78
+
+  Address         Publics by Name
+
+ 0000:092B8       operator delete(void far*)
+ 0000:092CC       operator delete[](void far*)
+ 0000:0937C       operator new(unsigned int)
+ 0000:095AD       operator new(unsigned long)
+ 0000:0959D       operator new[](unsigned int)
+ 0000:095FE       operator new[](unsigned long)
+ 0000:060A6       __tpdsc__[fatalerror]
+ 0000:06008       __tpdsc__[int_driver]
+ 0000:05F2D       __tpdsc__[bitmap_head]
+ 0000:06046       __tpdsc__[generalerror]
+ 0000:0610B       __tpdsc__[emm]
+ 0000:05E85       __tpdsc__[map]
+ 0000:05DBF       __tpdsc__[svga]
+ 0000:0607E       __tpdsc__[error]
+ 0000:05E05       __tpdsc__[timer]
+ 0000:05CCD       __tpdsc__[world] volatile
+ 0000:05C59       __tpdsc__[battle]
+ 0000:05EC1       __tpdsc__[bitmap]
+ 0000:05E45       __tpdsc__[player]
+ 0000:05D05       __tpdsc__[window] volatile
+ 0000:05F6D       __tpdsc__[bf_head]
+ 0000:05EFB       __tpdsc__[bi_head]
+ 0000:05FDE       __tpdsc__[graphic]
+ 0000:05C93       __tpdsc__[monster]
+ 0000:05D3F       __tpdsc__[cnstring]
+ 0000:05D7B       __tpdsc__[keyboard]
+ 0000:05B6C       __tpdsc__[map far*]
+ 0000:05BA1       __tpdsc__[svga far*]
+ 0000:05B8F       __tpdsc__[timer far*]
+ 0000:05C20       __tpdsc__[world far*]
+ 0000:05C46       __tpdsc__[battle far*]
+ 0000:05B59       __tpdsc__[bitmap far*]
+ 0000:05B7C       __tpdsc__[player far*]
+ 0000:05C0D       __tpdsc__[window far*]
+ 0000:05C32       __tpdsc__[monster far*]
+ 0000:05BF8       __tpdsc__[cnstring far*]
+ 0000:05BB2       __tpdsc__[keyboard far*]
+ 0000:040A1 idle  battle::battle(map far*,monster far*,world far*)
+ 0000:0404F idle  battle::battle(player far*,map far*,timer far*,svga far*,keyboard far*,flyback far*,monster far*)
+ 0000:04257 idle  battle::~battle()
+ 0000:046E9 idle  battle::beginbattle()
+ 0000:044EA idle  battle::drawall()
+ 0000:05549 idle  battle::drawandflush()
+ 0000:04334 idle  battle::drawbackground()
+ 0000:04644 idle  battle::fail()
+ 0000:043B8 idle  battle::fight()
+ 0000:044CC idle  battle::flush()
+ 0000:04519 idle  battle::fsm()
+ 0000:04892 idle  battle::judge()
+ 0000:04B8D idle  battle::monsterattack(int)
+ 0000:049FC idle  battle::playerattack(int)
+ 0000:04CDA idle  battle::playerchooseaction(int)
+ 0000:04FB7 idle  battle::playerchoosemonster(int)
+ 0000:05390 idle  battle::selectbeginaction()
+ 0000:0411F idle  battle::setbasic(player far*,map far*,timer far*,svga far*,keyboard far*,flyback far*,monster far*)
+ 0000:04939 idle  battle::shakemonster(monster far*,int,int)
+ 0000:0498F idle  battle::shakeplayer(player far*,int,int)
+ 0000:04609 idle  battle::timeout()
+ 0000:045D6 idle  battle::wait(int)
+ 0000:05520 idle  battle::waitforspace()
+ 0000:045E5 idle  battle::waittime(int)
+ 0000:0401E idle  battle_timer()
+ 119C:007DD       bf_head::
+ 0000:016BA idle  bf_head::print()
+ 0000:01580 idle  bf_head::read(file far*)
+ 0000:0199B idle  bitmap::bitmap(const char far*,svga far*)
+ 0000:0195F idle  bitmap::~bitmap()
+ 0000:01905 idle  bitmap::checkbuffer()
+ 0000:01B75 idle  bitmap::close()
+ 0000:01B45 idle  bitmap::initpalette()
+ 0000:01678 idle  bitmap::print()
+ 0000:015E0 idle  bitmap::read()
+ 0000:01A51 idle  bitmap::readline(int)
+ 0000:01B00 idle  bitmap::readpalette(unsigned char)
+ 0000:01AB2 idle  bitmap::setpalette(unsigned char)
+ 119C:007D1       bitmap_head::
+ 0000:05F64       bitmap_head::print()
+ 0000:05F5B       bitmap_head::read(file far*)
+ 119C:007C5       bi_head::
+ 0000:0176C idle  bi_head::print()
+ 0000:015B0 idle  bi_head::read(file far*)
+ 0000:00FBD idle  clockon()
+ 0000:01152 idle  cnstring::cnstring(const char far*,svga far*)
+ 0000:011E7 idle  cnstring::~cnstring()
+ 119C:000B4 idle  cnstring::firstrun
+ 119C:000B6 idle  cnstring::hzk
+ 0000:0123F idle  cnstring::init(const char far*)
+ 0000:0153C idle  cnstring::print(int,int,int,int,int,int)
+ 0000:0133C idle  cnstring::printchar(char far*,int,int,int)
+ 0000:014B5 idle  cnstring::printstring(char far*,int,int,int,int)
+ 0000:0156A idle  cnstring::setsvga(svga far*)
+ 0000:05616 idle  createworld()
+ 0000:00728 idle  dynamload(const char far*)
+ 0000:00555 idle  emm::emm(unsigned int)
+ 0000:0059B idle  emm::~emm()
+ 0000:004D1 idle  emm::calldriver()
+ 0000:005CB idle  emm::deallocate()
+ 0000:00655 idle  emm::infromnor(unsigned char far*,unsigned long,unsigned long)
+ 0000:006E0 idle  emm::infromxms(unsigned short,unsigned long,unsigned long,unsigned long)
+ 0000:00612 idle  emm::outtonor(unsigned char far*,unsigned long,unsigned long)
+ 0000:0069C idle  emm::outtoxms(unsigned short,unsigned long,unsigned long,unsigned long)
+ 119C:00094 idle  emm::para
+ 119C:00090 idle  emm::xms
+ 119C:00853       error::
+ 119C:0085D       fatalerror::
+ 0000:05B02       fatalerror::print() const
+ 0000:00263 idle  filenotfound(const char far*)
+ 0000:02959 idle  flyback::flyback()
+ 119C:00849       generalerror::
+ 0000:05B40       generalerror::print() const
+ 119C:00811       graphic::
+ 0000:060DC       int_driver::~int_driver()
+ 119C:00839       int_driver::
+ 0000:0101F idle  keeprun()
+ 0000:009C3 idle  keyboard::keyboard(void far*)
+ 0000:00A11 idle  keyboard::~keyboard()
+ 119C:00829       keyboard::
+ 0000:0095C idle  keyboard::change(void far*)
+ 0000:00915 idle  keyboard::install(void far*)
+ 0000:00989 idle  keyboard::uninstall()
+ 0000:00878 idle  keydown(char)
+ 0000:0089B idle  keyup(char)
+ 0000:01CD7 idle  map::map(const char far*,svga far*,int)
+ 0000:01C4F idle  map::~map()
+ 119C:001A2 idle  map::buffer1
+ 119C:001A6 idle  map::buffer2
+ 0000:0201A idle  map::draw()
+ 0000:021CF idle  map::drawonxy()
+ 0000:020A4 idle  map::drawwithtrans(int)
+ 0000:01F97 idle  map::read()
+ 0000:01F53 idle  map::setdrawwh(int,int)
+ 0000:01F6D idle  map::setdrawwh()
+ 0000:0225B idle  map::settransparent(int,int)
+ 0000:01F39 idle  map::setxy(int,int)
+ 0000:0228C idle  map::shake()
+ 0000:022B2 idle  map::unshake()
+ 0000:0333E idle  monster::monster(int,svga far*)
+ 0000:03393 idle  monster::monster(int,world far*)
+ 0000:033EC idle  monster::monster(int,world far*,int,int,int,int,int)
+ 0000:0358A idle  monster::~monster()
+ 0000:03689 idle  monster::draw()
+ 0000:03619 idle  monster::generatefilename(int)
+ 0000:03642 idle  monster::generatename(int)
+ 0000:0372E idle  monster::read()
+ 0000:034C9 idle  monster::setbasic(int,svga far*)
+ 0000:034FA idle  monster::setmonstertype(int,int)
+ 0000:0364B idle  monster::shake(int)
+ 0000:0366A idle  monster::unshake(int)
+ 0000:002B6 idle  notenoughmemory()
+ 0000:00817 idle  notifykeyboard()
+ 0000:022F2 idle  player::player(const char far*,svga far*)
+ 0000:02472 idle  player::~player()
+ 119C:001AA idle  player::buffer1
+ 119C:001AE idle  player::buffer2
+ 0000:026AD idle  player::clearlargepic()
+ 0000:0280F idle  player::draw()
+ 0000:0251B idle  player::drawlargepic()
+ 0000:024F2 idle  player::generatefilename(int)
+ 0000:02595 idle  player::initlargepic()
+ 0000:02933 idle  player::move()
+ 0000:05BC7       player::nextstep()
+ 0000:026B6 idle  player::read()
+ 0000:0082E idle  processkey()
+ 0000:008AF idle  processkey2()
+ 0000:008E2 idle  processkey3()
+ 0000:01BA3 idle  property::property(int,int,int,int)
+ 119C:000C6 idle  property::nstr
+ 0000:01BDF idle  property::setbasic(int,int,int,int)
+ 0000:01C27 idle  property::setdefence(int,int,int,int)
+ 0000:01C06 idle  property::setintrinsic(int,int,int)
+ 0000:00808 idle  sendeoi()
+ 0000:0935F idle  set_new_handler(void(near*)())
+ 0000:0A4AD idle  set_terminate(void(near*)())
+ 0000:0A585 idle  set_unexpected(void(near*)())
+ 0000:0DD98       string::string(const string far&)
+ 0000:0DEF0       string::string(const char far*)
+ 0000:0E194       string::~string()
+ 0000:0E252 idle  string::assert_element(unsigned int) const
+ 0000:0E347 idle  string::assert_index(unsigned int) const
+ 119C:012BE idle  string::case_sensitive
+ 119C:012C8 idle  string::freeboard
+ 119C:012C4 idle  string::initial_capac
+ 0000:0E9C8 idle  string::initial_capacity(unsigned int)
+ 0000:0EA0F idle  string::max_waste(unsigned int)
+ 119C:012C0 idle  string::paranoid_check
+ 119C:012C6 idle  string::resize_inc
+ 0000:0E9E5 idle  string::resize_increment(unsigned int)
+ 0000:0E971 idle  string::set_case_sensitive(int)
+ 0000:0E98E idle  string::set_paranoid_check(int)
+ 119C:012C2 idle  string::skip_white
+ 0000:0E9AB idle  string::skip_whitespace(int)
+ 0000:00C56 idle  svga::svga()
+ 0000:06141       svga::~svga()
+ 119C:007F9       svga::
+ 0000:00FA2 idle  svga::change(unsigned char)
+ 0000:00E4A idle  svga::changepage(int)
+ 0000:00CCA idle  svga::drawblock(void far*,int,int,int,int)
+ 0000:00F3B idle  svga::drawline(unsigned char,int,int,int,int)
+ 0000:00DD6 idle  svga::drawpixel(unsigned char,int,int)
+ 0000:00FAB idle  svga::exit()
+ 0000:00E64 idle  svga::flush()
+ 0000:00CAE idle  svga::init()
+ 0000:00FB4 idle  svga::retrieveblock(void far*,int,int,int,int)
+ 0000:0A4A5 idle  terminate()
+ 0000:01104 idle  timer::timer(void far*)
+ 0000:05F9F       timer::~timer()
+ 119C:007E9       timer::
+ 0000:0109D idle  timer::change(void far*)
+ 0000:01056 idle  timer::install(void far*)
+ 0000:010CA idle  timer::uninstall()
+ 0000:0E4EA       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 0000:0E5CC       tstringref::~tstringref()
+ 0000:0E6A4 idle  tstringref::check_freeboard()
+ 0000:0E716 idle  tstringref::grow_to(unsigned int)
+ 0000:0E634 idle  tstringref::reserve(unsigned int)
+ 0000:0E77A idle  tstringref::round_capacity(unsigned int)
+ 0000:0E7C7 idle  tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 0000:0E43C idle  tsubstring::assert_element(unsigned int) const
+ 0000:0D743 idle  typeinfo::operator =(const typeinfo far&)
+ 0000:0D6D8 idle  typeinfo::typeinfo(const typeinfo far&)
+ 0000:0D752 idle  typeinfo::~typeinfo()
+ 0000:0D784 idle  typeinfo::operator ==(const typeinfo far&) const
+ 0000:0D7A9 idle  typeinfo::operator !=(const typeinfo far&) const
+ 0000:0D7C9 idle  typeinfo::before(const typeinfo far&) const
+ 0000:0D83F idle  typeinfo::name() const
+ 0000:0A57D idle  unexpected()
+ 0000:00A76 idle  vga::change(unsigned char)
+ 0000:00BAC idle  vga::drawblock(void far*,int,int,int,int)
+ 0000:00A88 idle  vga::drawline(unsigned char,int,int,int,int)
+ 0000:00B7A idle  vga::drawpixel(unsigned char,int,int)
+ 0000:00A65 idle  vga::exit()
+ 0000:00A50 idle  vga::init()
+ 0000:00C01 idle  vga::retrieveblock(void far*,int,int,int,int)
+ 0000:00FF8 idle  void()
+ 0000:0387D idle  window::window(const char far*,svga far*)
+ 0000:038BB idle  window::window(const char far*,world far*)
+ 0000:03A71 idle  window::~window()
+ 119C:001BE idle  window::arrow
+ 119C:001BA idle  window::back
+ 0000:03B54 idle  window::drawarrow(int,int)
+ 0000:03AAD idle  window::drawback(int,int)
+ 0000:03AFA idle  window::drawback(int,int,int,int)
+ 119C:001B8 idle  window::firstdraw
+ 0000:03E35 idle  window::generateproperty(int,int,int,int)
+ 0000:03F43 idle  window::numtostr(int,char far*)
+ 0000:03BA2 idle  window::print(int,int,int,int)
+ 0000:03DAE idle  window::printnumber(int,int,int)
+ 0000:03C4C idle  window::printproperty(property far*,int,int,int,int)
+ 0000:0395D idle  window::setbasic(const char far*,svga far*)
+ 0000:03B89 idle  window::setxy(int,int)
+ 0000:02987 idle  world::world(player far*,map far*,timer far*,svga far*,keyboard far*,flyback far*)
+ 0000:02AB2 idle  world::~world()
+ 0000:02F12 idle  world::checkaccess()
+ 0000:02CD3 idle  world::init()
+ 0000:0310C idle  world::keepmove()
+ 0000:030FA idle  world::makebattle(int)
+ 0000:02D64 idle  world::move()
+ 0000:02C20 idle  world::setstartpoint(int,int)
+ 0000:03103 idle  world::showdialog(int)
+ 0000:030F1 idle  world::switchmap(int)
+ 0000:0A6FF       xalloc::xalloc(const string far&,unsigned int)
+ 0000:0A778       xalloc::raise()
+ 0000:003C7 idle  xms::xms()
+ 0000:00335 idle  xms::allocate(int)
+ 0000:00432 idle  xms::checka20()
+ 0000:002E2 idle  xms::enablea20()
+ 0000:0030C idle  xms::getdriver()
+ 0000:0038C idle  xms::install()
+ 0000:0048B idle  xms::maxxms()
+ 0000:002F5 idle  xms::test()
+ 0000:0AB39 idle  xmsg::operator =(const xmsg far&)
+ 0000:0A9C9       xmsg::xmsg(const xmsg far&)
+ 0000:0A90C       xmsg::xmsg(const string far&)
+ 0000:0AA66       xmsg::~xmsg()
+ 0000:0AACA idle  xmsg::raise()
+ 0000:092FC idle  xnew_handler()
+ 0000:0C251       _catchcleanup()
+ 0000:0BB1A idle  _rethrowexception(unsigned int,unsigned char far*)
+ 0000:0BAC6       _throwexception(void far*,void far*,void far*,void far*,unsigned int,unsigned int,unsigned int,unsigned char far*)
+ 0000:09612       _vector_new_(void far*,unsigned int,unsigned long,unsigned int,...)
+ 0000:0DB1E idle  __dynamiccast(void far*,void far*,void far*,void far*,int)
+ 0000:0A605       __getpolymorphicdtc(void far*,unsigned int)
+ 0000:0A659 idle  __getpolymorphicdtcfar(void far*,unsigned int)
+ 0000:0D858 idle  __gettypeinfo(void far*,void far*,void far*,void far*)
+ 0000:0DD05       __refdestructorcount()
+ 0000:0DD0B idle  __refexceptionlist()
+ 0000:0D6C6 idle  __throwexceptionname()
+ 0000:0D6A6 idle  __throwfilename()
+ 0000:0D6B8 idle  __throwlinenumber()
+ 119C:00000 idle  DATASEG@
+ 0000:0025F idle  DGROUP@
+ 0F25:0213F       e086_Entry
+ 0F25:026CD       e086_Shortcut
+ 0EC9:004E0       e087_Entry
+ 0EC9:005A3       e087_Shortcut
+ 0EC9:0003F       e087_Trap
+ 0F25:025E9 idle  e287_FPU_Control
+ 0F25:0273E idle  EmuVectorException
+ 0000:0FE32 idle  FIARQQ
+ 0000:00E32 idle  FICRQQ
+ 0000:05C32  Abs  FIDRQQ
+ 0000:01632  Abs  FIERQQ
+ 0000:00632 idle  FISRQQ
+ 0000:0A23D  Abs  FIWRQQ
+ 0000:04000 idle  FJARQQ
+ 0000:0C000 idle  FJCRQQ
+ 0000:08000 idle  FJSRQQ
+ 0000:08EF1 idle  F_LDIV@
+ 0000:08F00 idle  F_LMOD@
+ 0000:08EF8 idle  F_LUDIV@
+ 0000:08F08 idle  F_LUMOD@
+ 0000:08F9F idle  F_LXLSH@
+ 0000:09E79 idle  F_PADD@
+ 0000:09EA8 idle  F_PSUB@
+ 0000:08EF1 idle  LDIV@
+ 0000:08F00 idle  LMOD@
+ 0000:08EF8 idle  LUDIV@
+ 0000:08F08 idle  LUMOD@
+ 0000:08F9F idle  LXLSH@
+ 0000:06933       N_FTOL@
+ 0000:08EEE idle  N_LDIV@
+ 0000:08EFD       N_LMOD@
+ 0000:08EF5       N_LUDIV@
+ 0000:08F05 idle  N_LUMOD@
+ 0000:08F9C       N_LXLSH@
+ 0000:08FBD       N_LXMUL@
+ 0000:09E76       N_PADD@
+ 0000:09ED6       N_PCMP@
+ 0000:09EA5 idle  N_PSUB@
+ 0000:09EF7       N_SCOPY@
+ 0000:09E79 idle  PADD@
+ 0000:09EA8 idle  PSUB@
+ 0F25:02151 idle  rs1
+ 0F25:026A2 idle  rs2
+ 0000:09FD1       _abort
+ 0000:09FE1 idle  _atexit
+ 119C:001C2 idle  _battle_delay
+ 0000:077C5       _close
+ 0000:088AA       _eof
+ 119C:0007E       _errno
+ 0000:0A05E       _exit
+ 0000:09A0B idle  _farfree
+ 0000:09B1F       _farmalloc
+ 0000:09C80 idle  _farrealloc
+ 0000:077EF       _fclose
+ 0000:078A7       _fflush
+ 0000:089FB       _fgetc
+ 0000:08AF0 idle  _fgetchar
+ 0000:07971       _flushall
+ 0000:07C20       _fopen
+ 0000:07C59       _fprintf
+ 0000:0814D idle  _fputc
+ 0000:082CC idle  _fputchar
+ 0000:07C79       _fputs
+ 0000:07DE3       _fread
+ 0000:09A0B       _free
+ 0000:07E7D       _fscanf
+ 0000:07F2E       _fseek
+ 0000:07FAC       _ftell
+ 0000:0A0C0       _getvect
+ 0000:08EB7       _ioctl
+ 0000:06D42       _isatty
+ 119C:000AE idle  _key_code
+ 119C:000AD idle  _key_down
+ 119C:000AC idle  _key_up
+ 0000:08EE4 idle  _localeconv
+ 0000:06D57       _lseek
+ 0000:0585E       _main
+ 0000:09B15       _malloc
+ 0000:06998       _memcmp
+ 0000:069C0       _memcpy
+ 0000:06A7D       _memmove
+ 0000:06A0A       _memset
+ 0000:06A2B idle  _movmem
+ 119C:000A8 idle  _ondown
+ 119C:000A4 idle  _onup
+ 0000:08B34       _open
+ 0000:08087 idle  _perror
+ 119C:000B2 idle  _player_changed
+ 119C:000B0 idle  _player_run
+ 0000:067CC       _pow10
+ 0000:08110       _printf
+ 119C:000CA idle  _property
+ 0000:0A3D8       _raise
+ 0000:0BC98 idle  _RaiseException
+ 0000:08FE9       _rand
+ 0000:09C79       _realloc
+ 0000:09E56       _setblock
+ 0000:069E4 idle  _setmem
+ 0000:084D9       _setvbuf
+ 0000:0A0D3       _setvect
+ 0000:0A2D6 idle  _signal
+ 0000:08631       _sprintf
+ 0000:08FD4 idle  _srand
+ 0000:06AA1       _strcat
+ 0000:06AE0       _strcmp
+ 0000:06B10       _strlen
+ 0000:08DEE idle  _ungetc
+ 0000:072CE       _unlink
+ 0000:08657 idle  _vsprintf
+ 119C:0113E       __8086
+ 119C:00870 idle  __8087
+ 0000:0A0A9       __abort
+ 0000:01000 idle  __AHINCR
+ 0000:0000C  Abs  __AHSHIFT
+ 119C:01140       __atexitcnt
+ 119C:0137E       __atexittbl
+ 0000:09D84       __brk
+ 119C:00088       __brklvl
+ 119C:0006A idle  __C0argc
+ 119C:0006C idle  __C0argv
+ 119C:00070 idle  __C0environ
+ 0000:0A087 idle  __cexit
+ 0000:0014F       __checknull
+ 0000:0013C       __cleanup
+ 0000:0889A idle  __close
+ 119C:00FB0       __ctype
+ 0000:0D657 idle  __CurrExcContext
+ 0000:00000  Abs  __cvtfak
+ 0000:0A099 idle  __c_exit
+ 119C:00872       __default87
+ 119C:013C8 idle  __DestructorCountPtr
+ 119C:00B5A       __doserrno
+ 0000:06D2E       __DOSERROR
+ 119C:00B5C idle  __dosErrorToSV
+ 0000:06CAB       __dos_getfileattr
+ 0000:06CCF idle  __dos_setfileattr
+ 12DA:00020       __emu
+ 119C:00074 idle  __envLng
+ 119C:00076 idle  __envseg
+ 119C:00078 idle  __envSize
+ 0000:0A6B1       __ExceptInit
+ 0000:0C94F       __ExceptionHandler
+ 119C:00080 idle  __Exception_list
+ 0000:0A071       __exit
+ 119C:01142       __exitbuf
+ 119C:01144       __exitfopen
+ 119C:01146       __exitopen
+ 0000:089E3       __fgetc
+ 0000:079BB       __flushout
+ 119C:00B4C       __fmode
+ 0000:068A2       __fperror
+ 119C:010B6       __fpstklen
+ 0000:063E6       __fpuint
+ 0000:09F57 idle  __fpure_error_
+ 0000:0812F       __fputc
+ 0000:082E3       __FPUTN
+ 0000:07BD3 idle  __GETFP
+ 0000:0BC4D idle  __Global_unwind
+ 119C:00084       __heapbase
+ 119C:0008C       __heaptop
+ 119C:0005A idle  __Int0Vector
+ 119C:0005E idle  __Int4Vector
+ 119C:00062 idle  __Int5Vector
+ 119C:00066 idle  __Int6Vector
+ 0000:06CF0       __IOERROR
+ 119C:00876 idle  __LDT
+ 119C:00F74       __localeconvention
+ 0000:0C87C idle  __Local_unwind
+ 0000:09012       __LONGTOA
+ 0000:06B31       __MKNAME
+ 0000:00261 idle  __MMODEL
+ 119C:010F2       __new_handler
+ 0000:089FB       __Nfgetc
+ 119C:00B22       __nfile
+ 119C:00B4E       __notUmask
+ 0000:09F39       __npure_error_
+ 0000:08DEE       __Nungetc
+ 0000:08D0D idle  __open
+ 119C:00B24       __openfd
+ 0000:07B09 idle  __OPENFP
+ 119C:0007C idle  __osmajor
+ 119C:0007D idle  __osminor
+ 119C:0007C idle  __osversion
+ 0000:067D7       __POW10
+ 119C:00874       __protected
+ 119C:0007A       __psp
+ 0000:06DB6       __read
+ 0000:092A8       __REALCVT
+ 119C:01324       __RealCvtVector
+ 0000:001AD       __restorezero
+ 0000:0C89C idle  __Return_unwind
+ 0000:08857       __rtl_chmod
+ 0000:08878       __rtl_close
+ 0000:08CBA       __rtl_open
+ 0000:06D84       __rtl_read
+ 0000:08E5D       __rtl_write
+ 0000:09DC7       __sbrk
+ 0000:06DD1       __scanner
+ 0000:092B4       __scanpop
+ 0000:092B0       __scanrslt
+ 0000:092AC       __scantod
+ 119C:01328       __ScanTodVector
+ 0000:090E7       __scantol
+ 0000:06BE7       __setupio
+ 119C:010EA       __stklen
+ 0000:0695F       __stpcpy
+ 119C:00992       __streams
+ 119C:00C9E idle  __sys_errlist
+ 119C:00D5E       __sys_nerr
+ 0000:00150       __terminate
+ 0000:06B8E idle  __TMPNAM
+ 0000:00000  Abs  __turboCvt
+ 0000:09094       __UTOA
+ 119C:0007C       __version
+ 0000:07302       __VPRINTER
+ 0000:08E9C idle  __write
+ 0000:06C83       __xclose
+ 0000:065BC       __XCVT
+ 0000:087DA       __xfclose
+ 0000:0881A       __xfflush
+ 119C:00082 idle  ___brklvl
+ 0000:0A50F       ___call_terminate
+ 0000:0A5BF       ___call_unexpected
+ 119C:01184 idle  ___CPPexceptionList
+ 0000:09F13       ___ErrorMessage
+ 119C:01188 idle  ___exceptFlags
+ 119C:011AC idle  ___exceptionNameBuff
+ 119C:011A8 idle  ___exceptMemAllocVars
+ 119C:011A4 idle  ___exceptStaticBuffP
+ 119C:0122C idle  ___ExceptStaticXbuff
+ 0000:0DD77       ___ExitExceptBlocks
+ 0000:098CB idle  ___first
+ 0000:062FD idle  ___fpreset
+ 0000:0A44F       ___InitExceptBlock
+ 0000:0DD11       ___InitExceptBlocks
+ 0000:0AC69 idle  ___JumpToCatch__
+ 0000:098CD idle  ___last
+ 0000:08D25       ___read
+ 0000:098CF idle  ___rover
+ 119C:0118A idle  ___savedDS
+ 119C:0118C idle  ___savedSI
+ 119C:013BE       ___SignalPtr
+ 119C:0118E idle  ___terminatePTR
+ 119C:01196 idle  ___terminate_DS
+ 119C:011A0 idle  ___throwExceptionName
+ 119C:0119A idle  ___throwFileName
+ 119C:0119E idle  ___throwLineNumber
+ 119C:01192 idle  ___unexpectdPTR
+ 119C:01198 idle  ___unexpectd_DS
+ 0000:0867C       ___write
+ 119C:010EC       ___xalloc
+
+  Address         Publics by Value
+
+ 0000:0FE32 idle  FIARQQ
+ 0000:0C000 idle  FJCRQQ
+ 0000:0A23D  Abs  FIWRQQ
+ 0000:08000 idle  FJSRQQ
+ 0000:05C32  Abs  FIDRQQ
+ 0000:04000 idle  FJARQQ
+ 0000:01632  Abs  FIERQQ
+ 0000:01000 idle  __AHINCR
+ 0000:00E32 idle  FICRQQ
+ 0000:00632 idle  FISRQQ
+ 0000:0000C  Abs  __AHSHIFT
+ 0000:00000  Abs  __cvtfak
+ 0000:00000  Abs  __turboCvt
+ 0000:0EA0F idle  string::max_waste(unsigned int)
+ 0000:0E9E5 idle  string::resize_increment(unsigned int)
+ 0000:0E9C8 idle  string::initial_capacity(unsigned int)
+ 0000:0E9AB idle  string::skip_whitespace(int)
+ 0000:0E98E idle  string::set_paranoid_check(int)
+ 0000:0E971 idle  string::set_case_sensitive(int)
+ 0000:0E7C7 idle  tstringref::splice(unsigned int,unsigned int,const char far*,unsigned int)
+ 0000:0E77A idle  tstringref::round_capacity(unsigned int)
+ 0000:0E716 idle  tstringref::grow_to(unsigned int)
+ 0000:0E6A4 idle  tstringref::check_freeboard()
+ 0000:0E634 idle  tstringref::reserve(unsigned int)
+ 0000:0E5CC       tstringref::~tstringref()
+ 0000:0E4EA       tstringref::tstringref(const char far*,unsigned int,const char far*,unsigned int,unsigned int)
+ 0000:0E43C idle  tsubstring::assert_element(unsigned int) const
+ 0000:0E347 idle  string::assert_index(unsigned int) const
+ 0000:0E252 idle  string::assert_element(unsigned int) const
+ 0000:0E194       string::~string()
+ 0000:0DEF0       string::string(const char far*)
+ 0000:0DD98       string::string(const string far&)
+ 0000:0DD77       ___ExitExceptBlocks
+ 0000:0DD11       ___InitExceptBlocks
+ 0000:0DD0B idle  __refexceptionlist()
+ 0000:0DD05       __refdestructorcount()
+ 0000:0DB1E idle  __dynamiccast(void far*,void far*,void far*,void far*,int)
+ 0000:0D858 idle  __gettypeinfo(void far*,void far*,void far*,void far*)
+ 0000:0D83F idle  typeinfo::name() const
+ 0000:0D7C9 idle  typeinfo::before(const typeinfo far&) const
+ 0000:0D7A9 idle  typeinfo::operator !=(const typeinfo far&) const
+ 0000:0D784 idle  typeinfo::operator ==(const typeinfo far&) const
+ 0000:0D752 idle  typeinfo::~typeinfo()
+ 0000:0D743 idle  typeinfo::operator =(const typeinfo far&)
+ 0000:0D6D8 idle  typeinfo::typeinfo(const typeinfo far&)
+ 0000:0D6C6 idle  __throwexceptionname()
+ 0000:0D6B8 idle  __throwlinenumber()
+ 0000:0D6A6 idle  __throwfilename()
+ 0000:0D657 idle  __CurrExcContext
+ 0000:0C94F       __ExceptionHandler
+ 0000:0C89C idle  __Return_unwind
+ 0000:0C87C idle  __Local_unwind
+ 0000:0C251       _catchcleanup()
+ 0000:0BC98 idle  _RaiseException
+ 0000:0BC4D idle  __Global_unwind
+ 0000:0BB1A idle  _rethrowexception(unsigned int,unsigned char far*)
+ 0000:0BAC6       _throwexception(void far*,void far*,void far*,void far*,unsigned int,unsigned int,unsigned int,unsigned char far*)
+ 0000:0AC69 idle  ___JumpToCatch__
+ 0000:0AB39 idle  xmsg::operator =(const xmsg far&)
+ 0000:0AACA idle  xmsg::raise()
+ 0000:0AA66       xmsg::~xmsg()
+ 0000:0A9C9       xmsg::xmsg(const xmsg far&)
+ 0000:0A90C       xmsg::xmsg(const string far&)
+ 0000:0A778       xalloc::raise()
+ 0000:0A6FF       xalloc::xalloc(const string far&,unsigned int)
+ 0000:0A6B1       __ExceptInit
+ 0000:0A659 idle  __getpolymorphicdtcfar(void far*,unsigned int)
+ 0000:0A605       __getpolymorphicdtc(void far*,unsigned int)
+ 0000:0A5BF       ___call_unexpected
+ 0000:0A585 idle  set_unexpected(void(near*)())
+ 0000:0A57D idle  unexpected()
+ 0000:0A50F       ___call_terminate
+ 0000:0A4AD idle  set_terminate(void(near*)())
+ 0000:0A4A5 idle  terminate()
+ 0000:0A44F       ___InitExceptBlock
+ 0000:0A3D8       _raise
+ 0000:0A2D6 idle  _signal
+ 0000:0A0D3       _setvect
+ 0000:0A0C0       _getvect
+ 0000:0A0A9       __abort
+ 0000:0A099 idle  __c_exit
+ 0000:0A087 idle  __cexit
+ 0000:0A071       __exit
+ 0000:0A05E       _exit
+ 0000:09FE1 idle  _atexit
+ 0000:09FD1       _abort
+ 0000:09F57 idle  __fpure_error_
+ 0000:09F39       __npure_error_
+ 0000:09F13       ___ErrorMessage
+ 0000:09EF7       N_SCOPY@
+ 0000:09ED6       N_PCMP@
+ 0000:09EA8 idle  PSUB@
+ 0000:09EA8 idle  F_PSUB@
+ 0000:09EA5 idle  N_PSUB@
+ 0000:09E79 idle  PADD@
+ 0000:09E79 idle  F_PADD@
+ 0000:09E76       N_PADD@
+ 0000:09E56       _setblock
+ 0000:09DC7       __sbrk
+ 0000:09D84       __brk
+ 0000:09C80 idle  _farrealloc
+ 0000:09C79       _realloc
+ 0000:09B1F       _farmalloc
+ 0000:09B15       _malloc
+ 0000:09A0B idle  _farfree
+ 0000:09A0B       _free
+ 0000:098CF idle  ___rover
+ 0000:098CD idle  ___last
+ 0000:098CB idle  ___first
+ 0000:09612       _vector_new_(void far*,unsigned int,unsigned long,unsigned int,...)
+ 0000:095FE       operator new[](unsigned long)
+ 0000:095AD       operator new(unsigned long)
+ 0000:0959D       operator new[](unsigned int)
+ 0000:0937C       operator new(unsigned int)
+ 0000:0935F idle  set_new_handler(void(near*)())
+ 0000:092FC idle  xnew_handler()
+ 0000:092CC       operator delete[](void far*)
+ 0000:092B8       operator delete(void far*)
+ 0000:092B4       __scanpop
+ 0000:092B0       __scanrslt
+ 0000:092AC       __scantod
+ 0000:092A8       __REALCVT
+ 0000:090E7       __scantol
+ 0000:09094       __UTOA
+ 0000:09012       __LONGTOA
+ 0000:08FE9       _rand
+ 0000:08FD4 idle  _srand
+ 0000:08FBD       N_LXMUL@
+ 0000:08F9F idle  F_LXLSH@
+ 0000:08F9F idle  LXLSH@
+ 0000:08F9C       N_LXLSH@
+ 0000:08F08 idle  LUMOD@
+ 0000:08F08 idle  F_LUMOD@
+ 0000:08F05 idle  N_LUMOD@
+ 0000:08F00 idle  LMOD@
+ 0000:08F00 idle  F_LMOD@
+ 0000:08EFD       N_LMOD@
+ 0000:08EF8 idle  LUDIV@
+ 0000:08EF8 idle  F_LUDIV@
+ 0000:08EF5       N_LUDIV@
+ 0000:08EF1 idle  LDIV@
+ 0000:08EF1 idle  F_LDIV@
+ 0000:08EEE idle  N_LDIV@
+ 0000:08EE4 idle  _localeconv
+ 0000:08EB7       _ioctl
+ 0000:08E9C idle  __write
+ 0000:08E5D       __rtl_write
+ 0000:08DEE idle  _ungetc
+ 0000:08DEE       __Nungetc
+ 0000:08D25       ___read
+ 0000:08D0D idle  __open
+ 0000:08CBA       __rtl_open
+ 0000:08B34       _open
+ 0000:08AF0 idle  _fgetchar
+ 0000:089FB       __Nfgetc
+ 0000:089FB       _fgetc
+ 0000:089E3       __fgetc
+ 0000:088AA       _eof
+ 0000:0889A idle  __close
+ 0000:08878       __rtl_close
+ 0000:08857       __rtl_chmod
+ 0000:0881A       __xfflush
+ 0000:087DA       __xfclose
+ 0000:0867C       ___write
+ 0000:08657 idle  _vsprintf
+ 0000:08631       _sprintf
+ 0000:084D9       _setvbuf
+ 0000:082E3       __FPUTN
+ 0000:082CC idle  _fputchar
+ 0000:0814D idle  _fputc
+ 0000:0812F       __fputc
+ 0000:08110       _printf
+ 0000:08087 idle  _perror
+ 0000:07FAC       _ftell
+ 0000:07F2E       _fseek
+ 0000:07E7D       _fscanf
+ 0000:07DE3       _fread
+ 0000:07C79       _fputs
+ 0000:07C59       _fprintf
+ 0000:07C20       _fopen
+ 0000:07BD3 idle  __GETFP
+ 0000:07B09 idle  __OPENFP
+ 0000:079BB       __flushout
+ 0000:07971       _flushall
+ 0000:078A7       _fflush
+ 0000:077EF       _fclose
+ 0000:077C5       _close
+ 0000:07302       __VPRINTER
+ 0000:072CE       _unlink
+ 0000:06DD1       __scanner
+ 0000:06DB6       __read
+ 0000:06D84       __rtl_read
+ 0000:06D57       _lseek
+ 0000:06D42       _isatty
+ 0000:06D2E       __DOSERROR
+ 0000:06CF0       __IOERROR
+ 0000:06CCF idle  __dos_setfileattr
+ 0000:06CAB       __dos_getfileattr
+ 0000:06C83       __xclose
+ 0000:06BE7       __setupio
+ 0000:06B8E idle  __TMPNAM
+ 0000:06B31       __MKNAME
+ 0000:06B10       _strlen
+ 0000:06AE0       _strcmp
+ 0000:06AA1       _strcat
+ 0000:06A7D       _memmove
+ 0000:06A2B idle  _movmem
+ 0000:06A0A       _memset
+ 0000:069E4 idle  _setmem
+ 0000:069C0       _memcpy
+ 0000:06998       _memcmp
+ 0000:0695F       __stpcpy
+ 0000:06933       N_FTOL@
+ 0000:068A2       __fperror
+ 0000:067D7       __POW10
+ 0000:067CC       _pow10
+ 0000:065BC       __XCVT
+ 0000:063E6       __fpuint
+ 0000:062FD idle  ___fpreset
+ 0000:06141       svga::~svga()
+ 0000:0610B       __tpdsc__[emm]
+ 0000:060DC       int_driver::~int_driver()
+ 0000:060A6       __tpdsc__[fatalerror]
+ 0000:0607E       __tpdsc__[error]
+ 0000:06046       __tpdsc__[generalerror]
+ 0000:06008       __tpdsc__[int_driver]
+ 0000:05FDE       __tpdsc__[graphic]
+ 0000:05F9F       timer::~timer()
+ 0000:05F6D       __tpdsc__[bf_head]
+ 0000:05F64       bitmap_head::print()
+ 0000:05F5B       bitmap_head::read(file far*)
+ 0000:05F2D       __tpdsc__[bitmap_head]
+ 0000:05EFB       __tpdsc__[bi_head]
+ 0000:05EC1       __tpdsc__[bitmap]
+ 0000:05E85       __tpdsc__[map]
+ 0000:05E45       __tpdsc__[player]
+ 0000:05E05       __tpdsc__[timer]
+ 0000:05DBF       __tpdsc__[svga]
+ 0000:05D7B       __tpdsc__[keyboard]
+ 0000:05D3F       __tpdsc__[cnstring]
+ 0000:05D05       __tpdsc__[window] volatile
+ 0000:05CCD       __tpdsc__[world] volatile
+ 0000:05C93       __tpdsc__[monster]
+ 0000:05C59       __tpdsc__[battle]
+ 0000:05C46       __tpdsc__[battle far*]
+ 0000:05C32       __tpdsc__[monster far*]
+ 0000:05C20       __tpdsc__[world far*]
+ 0000:05C0D       __tpdsc__[window far*]
+ 0000:05BF8       __tpdsc__[cnstring far*]
+ 0000:05BC7       player::nextstep()
+ 0000:05BB2       __tpdsc__[keyboard far*]
+ 0000:05BA1       __tpdsc__[svga far*]
+ 0000:05B8F       __tpdsc__[timer far*]
+ 0000:05B7C       __tpdsc__[player far*]
+ 0000:05B6C       __tpdsc__[map far*]
+ 0000:05B59       __tpdsc__[bitmap far*]
+ 0000:05B40       generalerror::print() const
+ 0000:05B02       fatalerror::print() const
+ 0000:0585E       _main
+ 0000:05616 idle  createworld()
+ 0000:05549 idle  battle::drawandflush()
+ 0000:05520 idle  battle::waitforspace()
+ 0000:05390 idle  battle::selectbeginaction()
+ 0000:04FB7 idle  battle::playerchoosemonster(int)
+ 0000:04CDA idle  battle::playerchooseaction(int)
+ 0000:04B8D idle  battle::monsterattack(int)
+ 0000:049FC idle  battle::playerattack(int)
+ 0000:0498F idle  battle::shakeplayer(player far*,int,int)
+ 0000:04939 idle  battle::shakemonster(monster far*,int,int)
+ 0000:04892 idle  battle::judge()
+ 0000:046E9 idle  battle::beginbattle()
+ 0000:04644 idle  battle::fail()
+ 0000:04609 idle  battle::timeout()
+ 0000:045E5 idle  battle::waittime(int)
+ 0000:045D6 idle  battle::wait(int)
+ 0000:04519 idle  battle::fsm()
+ 0000:044EA idle  battle::drawall()
+ 0000:044CC idle  battle::flush()
+ 0000:043B8 idle  battle::fight()
+ 0000:04334 idle  battle::drawbackground()
+ 0000:04257 idle  battle::~battle()
+ 0000:0411F idle  battle::setbasic(player far*,map far*,timer far*,svga far*,keyboard far*,flyback far*,monster far*)
+ 0000:040A1 idle  battle::battle(map far*,monster far*,world far*)
+ 0000:0404F idle  battle::battle(player far*,map far*,timer far*,svga far*,keyboard far*,flyback far*,monster far*)
+ 0000:0401E idle  battle_timer()
+ 0000:03F43 idle  window::numtostr(int,char far*)
+ 0000:03E35 idle  window::generateproperty(int,int,int,int)
+ 0000:03DAE idle  window::printnumber(int,int,int)
+ 0000:03C4C idle  window::printproperty(property far*,int,int,int,int)
+ 0000:03BA2 idle  window::print(int,int,int,int)
+ 0000:03B89 idle  window::setxy(int,int)
+ 0000:03B54 idle  window::drawarrow(int,int)
+ 0000:03AFA idle  window::drawback(int,int,int,int)
+ 0000:03AAD idle  window::drawback(int,int)
+ 0000:03A71 idle  window::~window()
+ 0000:0395D idle  window::setbasic(const char far*,svga far*)
+ 0000:038BB idle  window::window(const char far*,world far*)
+ 0000:0387D idle  window::window(const char far*,svga far*)
+ 0000:0372E idle  monster::read()
+ 0000:03689 idle  monster::draw()
+ 0000:0366A idle  monster::unshake(int)
+ 0000:0364B idle  monster::shake(int)
+ 0000:03642 idle  monster::generatename(int)
+ 0000:03619 idle  monster::generatefilename(int)
+ 0000:0358A idle  monster::~monster()
+ 0000:034FA idle  monster::setmonstertype(int,int)
+ 0000:034C9 idle  monster::setbasic(int,svga far*)
+ 0000:033EC idle  monster::monster(int,world far*,int,int,int,int,int)
+ 0000:03393 idle  monster::monster(int,world far*)
+ 0000:0333E idle  monster::monster(int,svga far*)
+ 0000:0310C idle  world::keepmove()
+ 0000:03103 idle  world::showdialog(int)
+ 0000:030FA idle  world::makebattle(int)
+ 0000:030F1 idle  world::switchmap(int)
+ 0000:02F12 idle  world::checkaccess()
+ 0000:02D64 idle  world::move()
+ 0000:02CD3 idle  world::init()
+ 0000:02C20 idle  world::setstartpoint(int,int)
+ 0000:02AB2 idle  world::~world()
+ 0000:02987 idle  world::world(player far*,map far*,timer far*,svga far*,keyboard far*,flyback far*)
+ 0000:02959 idle  flyback::flyback()
+ 0000:02933 idle  player::move()
+ 0000:0280F idle  player::draw()
+ 0000:026B6 idle  player::read()
+ 0000:026AD idle  player::clearlargepic()
+ 0000:02595 idle  player::initlargepic()
+ 0000:0251B idle  player::drawlargepic()
+ 0000:024F2 idle  player::generatefilename(int)
+ 0000:02472 idle  player::~player()
+ 0000:022F2 idle  player::player(const char far*,svga far*)
+ 0000:022B2 idle  map::unshake()
+ 0000:0228C idle  map::shake()
+ 0000:0225B idle  map::settransparent(int,int)
+ 0000:021CF idle  map::drawonxy()
+ 0000:020A4 idle  map::drawwithtrans(int)
+ 0000:0201A idle  map::draw()
+ 0000:01F97 idle  map::read()
+ 0000:01F6D idle  map::setdrawwh()
+ 0000:01F53 idle  map::setdrawwh(int,int)
+ 0000:01F39 idle  map::setxy(int,int)
+ 0000:01CD7 idle  map::map(const char far*,svga far*,int)
+ 0000:01C4F idle  map::~map()
+ 0000:01C27 idle  property::setdefence(int,int,int,int)
+ 0000:01C06 idle  property::setintrinsic(int,int,int)
+ 0000:01BDF idle  property::setbasic(int,int,int,int)
+ 0000:01BA3 idle  property::property(int,int,int,int)
+ 0000:01B75 idle  bitmap::close()
+ 0000:01B45 idle  bitmap::initpalette()
+ 0000:01B00 idle  bitmap::readpalette(unsigned char)
+ 0000:01AB2 idle  bitmap::setpalette(unsigned char)
+ 0000:01A51 idle  bitmap::readline(int)
+ 0000:0199B idle  bitmap::bitmap(const char far*,svga far*)
+ 0000:0195F idle  bitmap::~bitmap()
+ 0000:01905 idle  bitmap::checkbuffer()
+ 0000:0176C idle  bi_head::print()
+ 0000:016BA idle  bf_head::print()
+ 0000:01678 idle  bitmap::print()
+ 0000:015E0 idle  bitmap::read()
+ 0000:015B0 idle  bi_head::read(file far*)
+ 0000:01580 idle  bf_head::read(file far*)
+ 0000:0156A idle  cnstring::setsvga(svga far*)
+ 0000:0153C idle  cnstring::print(int,int,int,int,int,int)
+ 0000:014B5 idle  cnstring::printstring(char far*,int,int,int,int)
+ 0000:0133C idle  cnstring::printchar(char far*,int,int,int)
+ 0000:0123F idle  cnstring::init(const char far*)
+ 0000:011E7 idle  cnstring::~cnstring()
+ 0000:01152 idle  cnstring::cnstring(const char far*,svga far*)
+ 0000:01104 idle  timer::timer(void far*)
+ 0000:010CA idle  timer::uninstall()
+ 0000:0109D idle  timer::change(void far*)
+ 0000:01056 idle  timer::install(void far*)
+ 0000:0101F idle  keeprun()
+ 0000:00FF8 idle  void()
+ 0000:00FBD idle  clockon()
+ 0000:00FB4 idle  svga::retrieveblock(void far*,int,int,int,int)
+ 0000:00FAB idle  svga::exit()
+ 0000:00FA2 idle  svga::change(unsigned char)
+ 0000:00F3B idle  svga::drawline(unsigned char,int,int,int,int)
+ 0000:00E64 idle  svga::flush()
+ 0000:00E4A idle  svga::changepage(int)
+ 0000:00DD6 idle  svga::drawpixel(unsigned char,int,int)
+ 0000:00CCA idle  svga::drawblock(void far*,int,int,int,int)
+ 0000:00CAE idle  svga::init()
+ 0000:00C56 idle  svga::svga()
+ 0000:00C01 idle  vga::retrieveblock(void far*,int,int,int,int)
+ 0000:00BAC idle  vga::drawblock(void far*,int,int,int,int)
+ 0000:00B7A idle  vga::drawpixel(unsigned char,int,int)
+ 0000:00A88 idle  vga::drawline(unsigned char,int,int,int,int)
+ 0000:00A76 idle  vga::change(unsigned char)
+ 0000:00A65 idle  vga::exit()
+ 0000:00A50 idle  vga::init()
+ 0000:00A11 idle  keyboard::~keyboard()
+ 0000:009C3 idle  keyboard::keyboard(void far*)
+ 0000:00989 idle  keyboard::uninstall()
+ 0000:0095C idle  keyboard::change(void far*)
+ 0000:00915 idle  keyboard::install(void far*)
+ 0000:008E2 idle  processkey3()
+ 0000:008AF idle  processkey2()
+ 0000:0089B idle  keyup(char)
+ 0000:00878 idle  keydown(char)
+ 0000:0082E idle  processkey()
+ 0000:00817 idle  notifykeyboard()
+ 0000:00808 idle  sendeoi()
+ 0000:00728 idle  dynamload(const char far*)
+ 0000:006E0 idle  emm::infromxms(unsigned short,unsigned long,unsigned long,unsigned long)
+ 0000:0069C idle  emm::outtoxms(unsigned short,unsigned long,unsigned long,unsigned long)
+ 0000:00655 idle  emm::infromnor(unsigned char far*,unsigned long,unsigned long)
+ 0000:00612 idle  emm::outtonor(unsigned char far*,unsigned long,unsigned long)
+ 0000:005CB idle  emm::deallocate()
+ 0000:0059B idle  emm::~emm()
+ 0000:00555 idle  emm::emm(unsigned int)
+ 0000:004D1 idle  emm::calldriver()
+ 0000:0048B idle  xms::maxxms()
+ 0000:00432 idle  xms::checka20()
+ 0000:003C7 idle  xms::xms()
+ 0000:0038C idle  xms::install()
+ 0000:00335 idle  xms::allocate(int)
+ 0000:0030C idle  xms::getdriver()
+ 0000:002F5 idle  xms::test()
+ 0000:002E2 idle  xms::enablea20()
+ 0000:002B6 idle  notenoughmemory()
+ 0000:00263 idle  filenotfound(const char far*)
+ 0000:00261 idle  __MMODEL
+ 0000:0025F idle  DGROUP@
+ 0000:001AD       __restorezero
+ 0000:00150       __terminate
+ 0000:0014F       __checknull
+ 0000:0013C       __cleanup
+ 0EC9:005A3       e087_Shortcut
+ 0EC9:004E0       e087_Entry
+ 0EC9:0003F       e087_Trap
+ 0F25:0273E idle  EmuVectorException
+ 0F25:026CD       e086_Shortcut
+ 0F25:026A2 idle  rs2
+ 0F25:025E9 idle  e287_FPU_Control
+ 0F25:02151 idle  rs1
+ 0F25:0213F       e086_Entry
+ 119C:013C8 idle  __DestructorCountPtr
+ 119C:013BE       ___SignalPtr
+ 119C:0137E       __atexittbl
+ 119C:01328       __ScanTodVector
+ 119C:01324       __RealCvtVector
+ 119C:012C8 idle  string::freeboard
+ 119C:012C6 idle  string::resize_inc
+ 119C:012C4 idle  string::initial_capac
+ 119C:012C2 idle  string::skip_white
+ 119C:012C0 idle  string::paranoid_check
+ 119C:012BE idle  string::case_sensitive
+ 119C:0122C idle  ___ExceptStaticXbuff
+ 119C:011AC idle  ___exceptionNameBuff
+ 119C:011A8 idle  ___exceptMemAllocVars
+ 119C:011A4 idle  ___exceptStaticBuffP
+ 119C:011A0 idle  ___throwExceptionName
+ 119C:0119E idle  ___throwLineNumber
+ 119C:0119A idle  ___throwFileName
+ 119C:01198 idle  ___unexpectd_DS
+ 119C:01196 idle  ___terminate_DS
+ 119C:01192 idle  ___unexpectdPTR
+ 119C:0118E idle  ___terminatePTR
+ 119C:0118C idle  ___savedSI
+ 119C:0118A idle  ___savedDS
+ 119C:01188 idle  ___exceptFlags
+ 119C:01184 idle  ___CPPexceptionList
+ 119C:01146       __exitopen
+ 119C:01144       __exitfopen
+ 119C:01142       __exitbuf
+ 119C:01140       __atexitcnt
+ 119C:0113E       __8086
+ 119C:010F2       __new_handler
+ 119C:010EC       ___xalloc
+ 119C:010EA       __stklen
+ 119C:010B6       __fpstklen
+ 119C:00FB0       __ctype
+ 119C:00F74       __localeconvention
+ 119C:00D5E       __sys_nerr
+ 119C:00C9E idle  __sys_errlist
+ 119C:00B5C idle  __dosErrorToSV
+ 119C:00B5A       __doserrno
+ 119C:00B4E       __notUmask
+ 119C:00B4C       __fmode
+ 119C:00B24       __openfd
+ 119C:00B22       __nfile
+ 119C:00992       __streams
+ 119C:00876 idle  __LDT
+ 119C:00874       __protected
+ 119C:00872       __default87
+ 119C:00870 idle  __8087
+ 119C:0085D       fatalerror::
+ 119C:00853       error::
+ 119C:00849       generalerror::
+ 119C:00839       int_driver::
+ 119C:00829       keyboard::
+ 119C:00811       graphic::
+ 119C:007F9       svga::
+ 119C:007E9       timer::
+ 119C:007DD       bf_head::
+ 119C:007D1       bitmap_head::
+ 119C:007C5       bi_head::
+ 119C:001C2 idle  _battle_delay
+ 119C:001BE idle  window::arrow
+ 119C:001BA idle  window::back
+ 119C:001B8 idle  window::firstdraw
+ 119C:001AE idle  player::buffer2
+ 119C:001AA idle  player::buffer1
+ 119C:001A6 idle  map::buffer2
+ 119C:001A2 idle  map::buffer1
+ 119C:000CA idle  _property
+ 119C:000C6 idle  property::nstr
+ 119C:000B6 idle  cnstring::hzk
+ 119C:000B4 idle  cnstring::firstrun
+ 119C:000B2 idle  _player_changed
+ 119C:000B0 idle  _player_run
+ 119C:000AE idle  _key_code
+ 119C:000AD idle  _key_down
+ 119C:000AC idle  _key_up
+ 119C:000A8 idle  _ondown
+ 119C:000A4 idle  _onup
+ 119C:00094 idle  emm::para
+ 119C:00090 idle  emm::xms
+ 119C:0008C       __heaptop
+ 119C:00088       __brklvl
+ 119C:00084       __heapbase
+ 119C:00082 idle  ___brklvl
+ 119C:00080 idle  __Exception_list
+ 119C:0007E       _errno
+ 119C:0007D idle  __osminor
+ 119C:0007C       __version
+ 119C:0007C idle  __osversion
+ 119C:0007C idle  __osmajor
+ 119C:0007A       __psp
+ 119C:00078 idle  __envSize
+ 119C:00076 idle  __envseg
+ 119C:00074 idle  __envLng
+ 119C:00070 idle  __C0environ
+ 119C:0006C idle  __C0argv
+ 119C:0006A idle  __C0argc
+ 119C:00066 idle  __Int6Vector
+ 119C:00062 idle  __Int5Vector
+ 119C:0005E idle  __Int4Vector
+ 119C:0005A idle  __Int0Vector
+ 119C:00000 idle  DATASEG@
+ 12DA:00020       __emu
+
+Line numbers for test.obj(TEST.CPP) segment _TEXT
+
+    40 0000:00000263    42 0000:00000269    43 0000:000002A7    45 0000:000002B2
+    48 0000:000002B6    50 0000:000002BC    51 0000:000002D3    53 0000:000002DE
+    23 0000:000002E2    25 0000:000002E7    26 0000:000002F1    35 0000:000002F5
+    39 0000:000002FB    41 0000:000002FC    42 0000:000002FF    43 0000:00000301
+    45 0000:00000304    47 0000:00000305    48 0000:00000308    51 0000:0000030C
+    53 0000:00000312    57 0000:0000031A    58 0000:0000031B    59 0000:0000031C
+    61 0000:0000031D    62 0000:00000320    63 0000:00000322    64 0000:00000325
+    67 0000:00000328    68 0000:00000329    69 0000:0000032A    71 0000:0000032B
+    72 0000:00000331    85 0000:00000335    87 0000:0000033B    90 0000:00000346
+    91 0000:0000034B    92 0000:0000034C    94 0000:0000034D    95 0000:0000034F
+    96 0000:00000352    98 0000:00000355    99 0000:00000358   100 0000:0000035A
+   102 0000:0000035D   103 0000:0000035E   105 0000:0000035F   107 0000:00000364
+   108 0000:0000037B   109 0000:00000386   110 0000:00000388   116 0000:0000038C
+   118 0000:00000392   120 0000:0000039A   121 0000:000003AA   123 0000:000003B5
+   126 0000:000003C3   129 0000:000003C7   130 0000:000003CD   131 0000:000003E4
+   133 0000:000003EE   135 0000:000003FC   136 0000:00000413   138 0000:0000041E
+   141 0000:00000428   150 0000:00000432   152 0000:00000438   154 0000:00000443
+   155 0000:00000444   157 0000:00000445   158 0000:00000447   159 0000:0000044A
+   161 0000:0000044D   162 0000:00000450   163 0000:00000452   164 0000:00000455
+   166 0000:00000457   168 0000:00000461   169 0000:00000462   171 0000:00000463
+   173 0000:00000465   174 0000:0000047C   175 0000:00000487   181 0000:0000048B
+   183 0000:00000491   184 0000:00000496   186 0000:0000049B   188 0000:000004A6
+   189 0000:000004A7   190 0000:000004A8   192 0000:000004A9   193 0000:000004AC
+   194 0000:000004AF   195 0000:000004B1   197 0000:000004B4   198 0000:000004B7
+   200 0000:000004BA   202 0000:000004CA   203 0000:000004CB   204 0000:000004CC
+   205 0000:000004CD   214 0000:000004D1   216 0000:000004D7   217 0000:000004EE
+   222 0000:00000501   223 0000:00000502   224 0000:00000503   225 0000:00000504
+   227 0000:00000505   229 0000:00000507   230 0000:0000050B   238 0000:0000050F
+   248 0000:00000513   249 0000:00000516   251 0000:00000518   252 0000:00000519
+   253 0000:0000051A   254 0000:0000051B   256 0000:0000051C   258 0000:0000051E
+   259 0000:00000522   260 0000:00000539   261 0000:00000546   262 0000:00000551
+   269 0000:00000555   270 0000:0000055A   271 0000:00000571   272 0000:00000577
+   275 0000:0000058B   277 0000:0000059B   278 0000:000005A0   279 0000:000005AD
+   280 0000:000005C7   282 0000:000005CB   284 0000:000005D1   285 0000:000005DD
+   286 0000:000005E1   288 0000:000005EA   289 0000:000005EB   291 0000:000005EC
+   292 0000:000005EE   293 0000:000005F1   294 0000:000005F4   295 0000:000005F7
+   296 0000:000005F9   297 0000:000005FC   300 0000:0000060C   301 0000:0000060D
+   303 0000:0000060E   304 0000:0000060E   312 0000:00000612   314 0000:00000617
+   315 0000:00000624   316 0000:0000062A   317 0000:00000632   319 0000:0000063B
+   321 0000:00000647   322 0000:00000651   323 0000:00000655   325 0000:0000065A
+   326 0000:00000667   327 0000:00000673   328 0000:0000067F   329 0000:00000688
+   331 0000:0000068E   332 0000:00000698   339 0000:0000069C   341 0000:000006A1
+   342 0000:000006AE   343 0000:000006B5   344 0000:000006BD   345 0000:000006C6
+   347 0000:000006D2   348 0000:000006DC   349 0000:000006E0   351 0000:000006E5
+   352 0000:000006F2   353 0000:000006FE   354 0000:0000070A   355 0000:00000713
+   357 0000:0000071A   358 0000:00000724
+     1 0000:00000728     5 0000:0000072E     8 0000:00000736     9 0000:0000074A
+    11 0000:00000751    12 0000:00000769    15 0000:00000774    16 0000:00000780
+    17 0000:00000792    21 0000:000007A1    22 0000:000007AE    24 0000:000007B5
+    25 0000:000007CC    28 0000:000007D7    30 0000:000007EA    31 0000:000007ED
+    33 0000:000007F0    34 0000:000007F7    36 0000:00000801    37 0000:00000804
+     7 0000:00000808     9 0000:0000080D    10 0000:0000080E    11 0000:00000810
+    12 0000:00000812    13 0000:00000813    19 0000:00000817    21 0000:0000081C
+    22 0000:0000081D    23 0000:0000081F    24 0000:00000821    25 0000:00000823
+    26 0000:00000825    27 0000:00000827    28 0000:00000829    29 0000:0000082A
+     1 0000:0000082E     5 0000:00000847     7 0000:00000848     8 0000:0000084A
+    10 0000:0000084D    11 0000:00000853    13 0000:0000085C    19 0000:00000864
+    21 0000:00000867    22 0000:00000868    31 0000:00000878    34 0000:00000880
+    35 0000:00000885    36 0000:00000889    37 0000:00000897    40 0000:0000089B
+    43 0000:000008A0    44 0000:000008A5    45 0000:000008AB
+     7 0000:000008AF     9 0000:000008C5    10 0000:000008CF    11 0000:000008D2
+    13 0000:000008E2    15 0000:000008F8    16 0000:00000902    17 0000:00000905
+    27 0000:00000915    31 0000:0000091B    32 0000:0000091C    33 0000:0000091D
+    34 0000:0000091E    36 0000:0000091F    38 0000:00000920    39 0000:00000922
+    41 0000:00000924    42 0000:00000927    43 0000:00000929    45 0000:0000092B
+    47 0000:0000092D    48 0000:00000930    49 0000:00000933    50 0000:00000937
+    52 0000:0000093A    53 0000:0000093D    54 0000:00000940    55 0000:00000943
+    57 0000:00000947    59 0000:00000948    60 0000:00000949    61 0000:0000094A
+    62 0000:0000094B    64 0000:0000094C    65 0000:00000958    72 0000:0000095C
+    74 0000:00000961    75 0000:00000962    76 0000:00000963    77 0000:00000964
+    79 0000:00000965    81 0000:00000966    82 0000:00000968    84 0000:0000096A
+    85 0000:0000096D    86 0000:0000096F    88 0000:00000971    90 0000:00000973
+    91 0000:00000976    92 0000:00000979    93 0000:0000097C    95 0000:00000980
+    97 0000:00000981    98 0000:00000982    99 0000:00000983   100 0000:00000984
+   101 0000:00000985   109 0000:00000989   111 0000:0000098F   113 0000:0000099B
+   114 0000:0000099C   115 0000:0000099D   116 0000:0000099E   118 0000:0000099F
+   120 0000:000009A0   121 0000:000009A2   123 0000:000009A4   124 0000:000009A7
+   125 0000:000009A9   126 0000:000009AB   128 0000:000009AD   129 0000:000009B0
+   130 0000:000009B3   131 0000:000009B6   133 0000:000009BA   135 0000:000009BB
+   136 0000:000009BC   137 0000:000009BD   138 0000:000009BE   139 0000:000009BF
+   146 0000:000009C3   147 0000:000009C8   148 0000:000009F2   149 0000:00000A01
+   151 0000:00000A11   152 0000:00000A16   153 0000:00000A2B   154 0000:00000A4C
+     4 0000:00000A50     6 0000:00000A55     7 0000:00000A56     8 0000:00000A57
+     9 0000:00000A58    10 0000:00000A5A    11 0000:00000A5C    12 0000:00000A5E
+    13 0000:00000A5F    14 0000:00000A60    15 0000:00000A61    21 0000:00000A65
+    23 0000:00000A6A    25 0000:00000A6B    26 0000:00000A6D    27 0000:00000A6F
+    29 0000:00000A71    30 0000:00000A72    33 0000:00000A76    35 0000:00000A7B
+    37 0000:00000A7C    38 0000:00000A7F    39 0000:00000A81    41 0000:00000A83
+    42 0000:00000A84    46 0000:00000A88    48 0000:00000A97    49 0000:00000A97
+    50 0000:00000A97    51 0000:00000AA2    53 0000:00000AB2    54 0000:00000AC3
+    56 0000:00000AD5    57 0000:00000AF2    62 0000:00000B11    63 0000:00000B34
+    64 0000:00000B40    60 0000:00000B4E    66 0000:00000B76    70 0000:00000B7A
+    72 0000:00000B7F    73 0000:00000B80    74 0000:00000B81    75 0000:00000B82
+    76 0000:00000B83    78 0000:00000B84    79 0000:00000B87    81 0000:00000B89
+    83 0000:00000B8C    84 0000:00000B8F    85 0000:00000B91    86 0000:00000B93
+    87 0000:00000B95    88 0000:00000B97    89 0000:00000B99    90 0000:00000B9B
+    92 0000:00000B9D    93 0000:00000BA0    95 0000:00000BA3    96 0000:00000BA4
+    97 0000:00000BA5    98 0000:00000BA6    99 0000:00000BA7   100 0000:00000BA8
+   110 0000:00000BAC   112 0000:00000BB1   113 0000:00000BB2   114 0000:00000BB3
+   115 0000:00000BB4   116 0000:00000BB5   117 0000:00000BB6   118 0000:00000BB7
+   120 0000:00000BB8   121 0000:00000BBB   123 0000:00000BBD   124 0000:00000BC0
+   125 0000:00000BC3   126 0000:00000BC5   128 0000:00000BC6   129 0000:00000BC9
+   130 0000:00000BCB   131 0000:00000BCD   132 0000:00000BCF   133 0000:00000BD1
+   134 0000:00000BD3   136 0000:00000BD5   138 0000:00000BD8   141 0000:00000BDA
+   142 0000:00000BDD   143 0000:00000BE1   144 0000:00000BE3   146 0000:00000BE6
+   147 0000:00000BE7   148 0000:00000BEA   149 0000:00000BEB   151 0000:00000BED
+   152 0000:00000BF1   155 0000:00000BF4   158 0000:00000BF6   159 0000:00000BF7
+   160 0000:00000BF8   161 0000:00000BF9   162 0000:00000BFA   163 0000:00000BFB
+   164 0000:00000BFC   165 0000:00000BFD   177 0000:00000C01   179 0000:00000C06
+   180 0000:00000C07   181 0000:00000C08   182 0000:00000C09   183 0000:00000C0A
+   184 0000:00000C0B   185 0000:00000C0C   187 0000:00000C0D   188 0000:00000C10
+   190 0000:00000C12   191 0000:00000C15   192 0000:00000C18   193 0000:00000C1A
+   195 0000:00000C1B   196 0000:00000C1E   197 0000:00000C20   198 0000:00000C22
+   199 0000:00000C24   200 0000:00000C26   201 0000:00000C28   203 0000:00000C2A
+   205 0000:00000C2D   208 0000:00000C2F   209 0000:00000C32   210 0000:00000C36
+   211 0000:00000C38   213 0000:00000C3B   214 0000:00000C3E   215 0000:00000C3F
+   216 0000:00000C40   218 0000:00000C42   219 0000:00000C46   222 0000:00000C49
+   225 0000:00000C4B   226 0000:00000C4C   227 0000:00000C4D   228 0000:00000C4E
+   229 0000:00000C4F   230 0000:00000C50   231 0000:00000C51   232 0000:00000C52
+     5 0000:00000C56     7 0000:00000C8F     9 0000:00000C9E    22 0000:00000CAE
+    24 0000:00000CB3    25 0000:00000CBD    26 0000:00000CC6    49 0000:00000CCA
+    57 0000:00000CD0    59 0000:00000CD5    61 0000:00000CDD    65 0000:00000CDE
+    67 0000:00000D02    68 0000:00000D09    70 0000:00000D0C    72 0000:00000D18
+    74 0000:00000D1F    75 0000:00000D20    76 0000:00000D21    77 0000:00000D24
+    78 0000:00000D27    79 0000:00000D2A    80 0000:00000D2C    81 0000:00000D2D
+    84 0000:00000D2E    86 0000:00000D3F    88 0000:00000D54    89 0000:00000D73
+    91 0000:00000D77    92 0000:00000D7E    93 0000:00000D81    94 0000:00000D82
+    95 0000:00000D83    96 0000:00000D86    97 0000:00000D89    98 0000:00000D8C
+    99 0000:00000D8E   100 0000:00000D8F   103 0000:00000D9B   104 0000:00000D9E
+   106 0000:00000DA6   108 0000:00000DAB   109 0000:00000DB2   110 0000:00000DB5
+   111 0000:00000DB6   112 0000:00000DB7   113 0000:00000DBA   114 0000:00000DBD
+   115 0000:00000DC0   116 0000:00000DC2   117 0000:00000DC3   121 0000:00000DD1
+   122 0000:00000DD2   126 0000:00000DD6   128 0000:00000DDC   134 0000:00000DE4
+   135 0000:00000E08   136 0000:00000E0F   138 0000:00000E15   140 0000:00000E21
+   141 0000:00000E22   142 0000:00000E23   143 0000:00000E26   144 0000:00000E29
+   145 0000:00000E2C   146 0000:00000E2E   147 0000:00000E2F   149 0000:00000E30
+   151 0000:00000E3A   153 0000:00000E46   156 0000:00000E4A   158 0000:00000E4F
+   159 0000:00000E50   160 0000:00000E51   161 0000:00000E52   162 0000:00000E55
+   163 0000:00000E58   164 0000:00000E5B   165 0000:00000E5D   166 0000:00000E5E
+   167 0000:00000E5F   168 0000:00000E60   175 0000:00000E64   180 0000:00000E69
+   181 0000:00000E72   182 0000:00000E8E   183 0000:00000E97   184 0000:00000EB6
+   185 0000:00000EC2   186 0000:00000EE1   187 0000:00000EEA   188 0000:00000F09
+   189 0000:00000F15   191 0000:00000F37   194 0000:00000F3B   196 0000:00000F40
+   198 0000:00000F4A   199 0000:00000F6E   200 0000:00000F70   202 0000:00000F7A
+   205 0000:00000F9E   206 0000:00000F9E   209 0000:00000FA2   211 0000:00000FA7
+   212 0000:00000FA7   214 0000:00000FAB   216 0000:00000FB0   217 0000:00000FB0
+   219 0000:00000FB4   221 0000:00000FB9   222 0000:00000FB9
+     1 0000:00000FBD     3 0000:00000FD3     4 0000:00000FD4     5 0000:00000FD5
+     6 0000:00000FD6     8 0000:00000FD7     9 0000:00000FD9    10 0000:00000FDB
+    11 0000:00000FDD    12 0000:00000FE0    13 0000:00000FE2    15 0000:00000FE4
+    16 0000:00000FE5    17 0000:00000FE6    18 0000:00000FE7    19 0000:00000FE8
+    22 0000:00000FF8    24 0000:0000100E    25 0000:0000100F    30 0000:0000101F
+    32 0000:00001035    34 0000:0000103C    35 0000:00001040    38 0000:00001046
+    49 0000:00001056    53 0000:0000105C    54 0000:0000105D    55 0000:0000105E
+    56 0000:0000105F    58 0000:00001060    59 0000:00001062    61 0000:00001064
+    63 0000:00001065    64 0000:00001068    65 0000:0000106A    66 0000:0000106C
+    68 0000:0000106E    69 0000:00001071    70 0000:00001074    71 0000:00001078
+    73 0000:0000107B    74 0000:0000107E    75 0000:00001081    76 0000:00001084
+    78 0000:00001088    80 0000:00001089    81 0000:0000108A    82 0000:0000108B
+    83 0000:0000108C    85 0000:0000108D    88 0000:00001099    97 0000:0000109D
+    99 0000:000010A2   100 0000:000010A3   101 0000:000010A4   102 0000:000010A5
+   104 0000:000010A6   106 0000:000010A7   107 0000:000010A9   109 0000:000010AB
+   110 0000:000010AE   111 0000:000010B0   113 0000:000010B2   115 0000:000010B4
+   116 0000:000010B7   117 0000:000010BA   118 0000:000010BD   120 0000:000010C1
+   122 0000:000010C2   123 0000:000010C3   124 0000:000010C4   125 0000:000010C5
+   126 0000:000010C6   136 0000:000010CA   138 0000:000010D0   140 0000:000010DC
+   141 0000:000010DD   142 0000:000010DE   143 0000:000010DF   145 0000:000010E0
+   147 0000:000010E1   148 0000:000010E3   150 0000:000010E5   151 0000:000010E8
+   152 0000:000010EA   153 0000:000010EC   155 0000:000010EE   156 0000:000010F1
+   157 0000:000010F4   158 0000:000010F7   160 0000:000010FB   162 0000:000010FC
+   163 0000:000010FD   164 0000:000010FE   165 0000:000010FF   166 0000:00001100
+   171 0000:00001104   172 0000:00001109   173 0000:00001133   174 0000:00001142
+     4 0000:00001152     5 0000:00001158     6 0000:00001170     7 0000:0000117D
+     9 0000:0000118B    11 0000:00001192    13 0000:00001198    14 0000:000011AD
+    16 0000:000011B5    17 0000:000011CC    22 0000:000011D7    24 0000:000011E7
+    25 0000:000011ED    28 0000:000011FA    32 0000:0000123B    35 0000:0000123F
+    37 0000:00001245    38 0000:0000124D    39 0000:00001252    42 0000:00001252
+    43 0000:00001266    45 0000:0000126D    46 0000:00001287    51 0000:000012A3
+    52 0000:000012B7    54 0000:000012CA    55 0000:000012E2    56 0000:00001312
+    49 0000:00001319    59 0000:00001323    61 0000:0000132E    63 0000:00001338
+    66 0000:0000133C    68 0000:00001342    69 0000:0000135A    73 0000:00001372
+    74 0000:0000137D    76 0000:00001387    78 0000:000013A9    79 0000:000013BF
+    81 0000:000013C5    83 0000:000013CF    84 0000:000013E7    85 0000:000013EA
+    86 0000:0000140B    88 0000:00001433    89 0000:00001456    92 0000:0000147F
+    94 0000:000014B1    97 0000:000014B1   101 0000:000014B5   103 0000:000014BB
+   104 0000:000014BB   106 0000:000014C0   110 0000:000014D0   112 0000:000014D0
+   114 0000:000014D8   115 0000:000014DD   116 0000:000014E1   118 0000:000014E7
+   119 0000:000014EE   121 0000:000014F1   122 0000:000014FD   123 0000:00001506
+   125 0000:0000150E   127 0000:0000151A   128 0000:00001532   131 0000:00001538
+   135 0000:0000153C   137 0000:00001541   138 0000:00001566   141 0000:0000156A
+   143 0000:0000156F   144 0000:0000157C
+     4 0000:00001580     6 0000:00001585     8 0000:00001592    11 0000:000015AC
+    14 0000:000015B0    16 0000:000015B5    18 0000:000015C2    21 0000:000015DC
+    36 0000:000015E0    38 0000:000015E6    40 0000:000015FC    42 0000:0000160D
+    43 0000:00001626    45 0000:00001642    50 0000:0000164C    51 0000:0000164D
+    53 0000:0000164E    54 0000:00001651    55 0000:00001653    57 0000:00001655
+    58 0000:00001658    59 0000:0000165C    60 0000:0000165E    62 0000:0000165F
+    63 0000:00001661    64 0000:00001663    66 0000:00001666    67 0000:00001667
+    70 0000:00001668    73 0000:00001674    76 0000:00001678    78 0000:0000167D
+    79 0000:00001691    80 0000:000016A5    81 0000:000016B6    84 0000:000016BA
+    86 0000:000016BF    87 0000:000016E2    88 0000:000016E9    89 0000:000016F0
+    90 0000:00001708    91 0000:00001717    92 0000:00001725    93 0000:00001733
+    94 0000:00001745    97 0000:00001768    99 0000:0000176C   101 0000:00001772
+   102 0000:00001795   103 0000:0000179C   104 0000:000017A3   105 0000:000017B2
+   106 0000:000017C1   107 0000:000017D0   108 0000:000017DE   109 0000:000017EC
+   110 0000:00001801   111 0000:00001813   114 0000:0000183E   117 0000:00001844
+   120 0000:0000184A   123 0000:00001850   126 0000:00001856   127 0000:00001860
+   129 0000:00001860   130 0000:0000186F   131 0000:00001876   132 0000:00001885
+   133 0000:00001894   134 0000:000018A3   135 0000:000018AA   136 0000:000018BC
+   137 0000:000018C6   138 0000:000018E9   153 0000:00001905   155 0000:0000190B
+   157 0000:00001916   158 0000:00001929   160 0000:00001930   162 0000:00001938
+   163 0000:00001950   166 0000:0000195B   172 0000:0000195F   173 0000:00001964
+   176 0000:00001971   177 0000:00001997   185 0000:0000199B   186 0000:000019A1
+   187 0000:000019D6   188 0000:000019F1   190 0000:000019FA   192 0000:00001A03
+   193 0000:00001A1B   196 0000:00001A26   197 0000:00001A30   202 0000:00001A37
+   205 0000:00001A41   208 0000:00001A51   210 0000:00001A57   211 0000:00001A57
+   213 0000:00001A5F   214 0000:00001A6D   216 0000:00001A80   218 0000:00001A8D
+   220 0000:00001A94   223 0000:00001AAE   225 0000:00001AB2   229 0000:00001AB8
+   230 0000:00001AC8   231 0000:00001AD5   233 0000:00001AE2   234 0000:00001AE3
+   236 0000:00001AE4   237 0000:00001AE7   238 0000:00001AEA   240 0000:00001AEB
+   241 0000:00001AEE   242 0000:00001AF1   243 0000:00001AF2   244 0000:00001AF5
+   245 0000:00001AF6   246 0000:00001AF9   248 0000:00001AFA   249 0000:00001AFB
+   250 0000:00001AFC   253 0000:00001B00   255 0000:00001B05   257 0000:00001B22
+   260 0000:00001B41   263 0000:00001B45   265 0000:00001B4B   267 0000:00001B4B
+   269 0000:00001B50   270 0000:00001B5A   273 0000:00001B71   274 0000:00001B71
+   310 0000:00001B75   312 0000:00001B7A   314 0000:00001B86   315 0000:00001B92
+   317 0000:00001B9F
+     5 0000:00001BA3     6 0000:00001BA8     7 0000:00001BBF     9 0000:00001BD5
+    12 0000:00001BDF    14 0000:00001BE4    15 0000:00001BED    16 0000:00001BF4
+    17 0000:00001BFB    20 0000:00001C02    23 0000:00001C06    25 0000:00001C0B
+    26 0000:00001C15    27 0000:00001C1C    28 0000:00001C23    32 0000:00001C27
+    34 0000:00001C2C    35 0000:00001C36    36 0000:00001C3D    37 0000:00001C44
+    38 0000:00001C4B
+     4 0000:00001C4F     5 0000:00001C54     6 0000:00001C61     7 0000:00001C77
+     9 0000:00001CAF    11 0000:00001CD7    13 0000:00001D11    14 0000:00001D55
+    16 0000:00001D67    17 0000:00001D7A    21 0000:00001D89    24 0000:00001D91
+    25 0000:00001D9D    26 0000:00001DC7    27 0000:00001DD6    28 0000:00001DEA
+    29 0000:00001DF4    30 0000:00001E08    31 0000:00001E19    32 0000:00001E35
+    34 0000:00001E40    36 0000:00001E4C    40 0000:00001E51    41 0000:00001E5E
+    42 0000:00001E70    44 0000:00001E80    48 0000:00001EAE    49 0000:00001EB5
+    54 0000:00001EC1    56 0000:00001ECD    59 0000:00001F02    65 0000:00001F0E
+    72 0000:00001F18    76 0000:00001F22    80 0000:00001F39    82 0000:00001F3E
+    83 0000:00001F48    84 0000:00001F4F    87 0000:00001F53    89 0000:00001F58
+    90 0000:00001F62    91 0000:00001F69    93 0000:00001F6D    95 0000:00001F72
+    96 0000:00001F84    97 0000:00001F93   108 0000:00001F97   116 0000:00001F9D
+   117 0000:00001FA9   118 0000:00001FB1   124 0000:00001FC3   126 0000:00001FCA
+   127 0000:00001FD8   128 0000:00001FF4   131 0000:0000200B   134 0000:00002016
+   147 0000:0000201A   152 0000:00002020   153 0000:0000203F   157 0000:00002047
+   159 0000:0000204E   160 0000:0000207D   161 0000:00002089   164 0000:000020A0
+   165 0000:000020A0   172 0000:000020A4   177 0000:000020AA   178 0000:000020B2
+   180 0000:000020CF   182 0000:000020D7   183 0000:000020FE   185 0000:00002122
+   187 0000:00002126   188 0000:00002146   191 0000:0000217B   192 0000:000021A2
+   193 0000:000021AA   195 0000:000021CB   196 0000:000021CB   209 0000:000021CF
+   214 0000:000021D5   215 0000:000021DD   217 0000:000021FA   219 0000:00002201
+   220 0000:00002230   221 0000:00002240   223 0000:00002257   224 0000:00002257
+   228 0000:0000225B   230 0000:00002260   231 0000:00002271   232 0000:00002288
+   235 0000:0000228C   237 0000:00002291   238 0000:0000229C   239 0000:000022A4
+   240 0000:000022A9   241 0000:000022AE   243 0000:000022AE   245 0000:000022B2
+   247 0000:000022B7   248 0000:000022C2   249 0000:000022CA
+     4 0000:000022F2     6 0000:0000232C     7 0000:00002374     9 0000:0000237D
+    10 0000:00002383    11 0000:00002397    13 0000:000023AB    15 0000:000023B2
+    17 0000:000023BB    18 0000:000023C8    20 0000:000023DF    21 0000:000023E9
+    23 0000:000023F3    25 0000:000023FE    26 0000:0000240F    27 0000:0000241B
+    28 0000:00002423    31 0000:00002438    32 0000:00002445    33 0000:0000244F
+    34 0000:00002455    37 0000:0000245B    40 0000:00002472    41 0000:00002478
+    42 0000:00002485    44 0000:00002499    47 0000:000024EE    56 0000:000024F2
+    58 0000:000024F7    59 0000:0000250E    60 0000:00002517    63 0000:0000251B
+    67 0000:00002521    69 0000:00002528    70 0000:00002532    73 0000:00002538
+    74 0000:00002543    75 0000:00002553    77 0000:0000256D    78 0000:0000256D
+    81 0000:00002595    86 0000:000025A4    88 0000:000025BA    90 0000:000025CC
+    91 0000:000025DC    92 0000:0000262F    93 0000:0000264A    94 0000:00002668
+    95 0000:0000267A    99 0000:000026A2   100 0000:000026A9   103 0000:000026AD
+   105 0000:000026B2   106 0000:000026B2   114 0000:000026B6   122 0000:000026BC
+   124 0000:000026CF   125 0000:000026E1   127 0000:000026E9   129 0000:000026F1
+   130 0000:00002707   134 0000:00002735   135 0000:0000274A   136 0000:00002752
+   137 0000:0000277C   138 0000:00002784   139 0000:000027AF   140 0000:000027B7
+   143 0000:0000280B   144 0000:0000280B   169 0000:0000280F   175 0000:00002815
+   177 0000:00002828   179 0000:00002842   181 0000:00002866   183 0000:0000286E
+   184 0000:00002891   186 0000:000028B5   188 0000:000028B9   191 0000:000028E6
+   192 0000:00002909   193 0000:00002911   195 0000:0000292F   196 0000:0000292F
+   211 0000:00002933   213 0000:00002938   214 0000:00002943   218 0000:0000294B
+   220 0000:00002955
+     2 0000:00002959     3 0000:0000295E     4 0000:00002975     5 0000:0000297D
+     8 0000:00002987     9 0000:0000298C    10 0000:000029A3    11 0000:000029AF
+    12 0000:000029B8    13 0000:000029C1    14 0000:000029CA    15 0000:000029D3
+    18 0000:000029DC    19 0000:000029EA    21 0000:000029F9    26 0000:00002A06
+    29 0000:00002AB2    30 0000:00002AC1    31 0000:00002AD0    32 0000:00002B02
+    33 0000:00002B34    34 0000:00002B7A    35 0000:00002BBF    38 0000:00002C15
+    46 0000:00002C20    51 0000:00002C2B    52 0000:00002C42    54 0000:00002C56
+    55 0000:00002C67    57 0000:00002C7B    58 0000:00002C81    60 0000:00002C85
+    61 0000:00002C98    64 0000:00002CAB    71 0000:00002CD3    73 0000:00002CE2
+    74 0000:00002D25    75 0000:00002D2A    76 0000:00002D31    78 0000:00002D40
+    80 0000:00002D4B    82 0000:00002D59    83 0000:00002D60   162 0000:00002D64
+   164 0000:00002D69   167 0000:00002D81   170 0000:00002D99   171 0000:00002D9F
+   175 0000:00002DBB   178 0000:00002DD2   179 0000:00002DD8   183 0000:00002DF4
+   186 0000:00002E0B   187 0000:00002E11   191 0000:00002E2D   194 0000:00002E6F
+   195 0000:00002E75   199 0000:00002E90   202 0000:00002EA0   203 0000:00002EE2
+   205 0000:00002EE4   208 0000:00002EE4   210 0000:00002EEE   214 0000:00002F12
+   216 0000:00002F18   219 0000:00002F33   222 0000:00002F4C   223 0000:00002F5E
+   224 0000:00002F66   228 0000:00002F7B   229 0000:00002F8C   230 0000:00002F94
+   234 0000:00002FA6   235 0000:00002FBD   236 0000:00002FC5   237 0000:00002FD5
+   240 0000:00003002   241 0000:00003017   242 0000:0000301F   243 0000:0000302F
+   244 0000:00003068   247 0000:00003068   248 0000:00003099   250 0000:0000309F
+   251 0000:000030A8   253 0000:000030B2   255 0000:000030B8   256 0000:000030C1
+   258 0000:000030CB   260 0000:000030D1   261 0000:000030DA   265 0000:000030E5
+   268 0000:000030F1   270 0000:000030F6   286 0000:000030F6   289 0000:000030FA
+   291 0000:000030FF   292 0000:000030FF   294 0000:00003103   296 0000:00003108
+   297 0000:00003108   301 0000:0000310C   303 0000:00003111   305 0000:0000311A
+   307 0000:00003120   309 0000:0000312A   311 0000:00003143   312 0000:00003197
+   313 0000:000031E0   314 0000:00003286   317 0000:00003332
+     5 0000:0000333E     6 0000:00003343     7 0000:00003372     8 0000:00003383
+    11 0000:00003393    12 0000:00003398    13 0000:000033C7    14 0000:000033DC
+    17 0000:000033EC    18 0000:000033F1    19 0000:00003422    20 0000:00003437
+    22 0000:00003447    23 0000:00003456    24 0000:00003465    25 0000:00003474
+    26 0000:00003483    27 0000:00003494    30 0000:00003494    32 0000:0000349C
+    36 0000:000034AF    40 0000:000034C9    42 0000:000034CE    44 0000:000034DD
+    45 0000:000034EA    46 0000:000034F1    47 0000:000034F6    62 0000:000034FA
+    64 0000:00003506    66 0000:0000350F    67 0000:00003527    71 0000:00003534
+    72 0000:00003541    76 0000:00003562    79 0000:0000358A    80 0000:00003599
+    83 0000:000035A6    85 0000:000035B3    89 0000:0000360E    91 0000:00003619
+    93 0000:0000361E    95 0000:00003635    96 0000:0000363E    99 0000:00003642
+   102 0000:00003647   105 0000:0000364B   107 0000:00003650   109 0000:00003666
+   112 0000:0000366A   114 0000:0000366F   116 0000:00003685   119 0000:00003689
+   123 0000:0000368F   125 0000:00003698   126 0000:000036A2   129 0000:000036AA
+   131 0000:000036C0   132 0000:000036D0   134 0000:00003706   137 0000:0000372E
+   140 0000:0000373D   142 0000:0000373D   145 0000:00003754   148 0000:00003767
+   150 0000:000037BB   151 0000:000037EB   152 0000:0000380E   153 0000:00003829
+   154 0000:00003845   158 0000:00003872   159 0000:00003879
+     4 0000:0000387D     5 0000:00003882     6 0000:00003899     7 0000:000038AB
+     9 0000:000038BB    10 0000:000038C0    11 0000:000038D7    12 0000:000038ED
+    15 0000:0000395D    17 0000:0000396C    19 0000:000039B0    21 0000:000039B9
+    22 0000:000039FB    23 0000:00003A3D    24 0000:00003A45    27 0000:00003A4B
+    28 0000:00003A57    29 0000:00003A60    30 0000:00003A66    33 0000:00003A71
+    34 0000:00003A76    36 0000:00003A83    37 0000:00003AA9    44 0000:00003AAD
+    46 0000:00003AB2    47 0000:00003ABC    49 0000:00003AC3    50 0000:00003AD5
+    52 0000:00003AEB    55 0000:00003AF6    59 0000:00003AFA    61 0000:00003AFF
+    62 0000:00003B08    63 0000:00003B0F    64 0000:00003B16    65 0000:00003B1D
+    67 0000:00003B2F    69 0000:00003B45    76 0000:00003B50    85 0000:00003B54
+    87 0000:00003B59    88 0000:00003B78    89 0000:00003B85    97 0000:00003B89
+    99 0000:00003B8E   100 0000:00003B97   101 0000:00003B9E   113 0000:00003BA2
+   118 0000:00003BA8   119 0000:00003BB8   121 0000:00003BD7   123 0000:00003BEE
+   124 0000:00003C05   125 0000:00003C14   127 0000:00003C2B   130 0000:00003C48
+   140 0000:00003C4C   143 0000:00003C52   146 0000:00003C5E   147 0000:00003C6E
+   148 0000:00003CA9   149 0000:00003CE8   150 0000:00003CFC   151 0000:00003D18
+   152 0000:00003D37   154 0000:00003D3A   155 0000:00003D5C   157 0000:00003D62
+   158 0000:00003D84   161 0000:00003DA0   164 0000:00003DAA   166 0000:00003DAE
+   168 0000:00003DB4   173 0000:00003DC0   174 0000:00003DD0   175 0000:00003DE1
+   176 0000:00003DF5   177 0000:00003E0E   179 0000:00003E27   180 0000:00003E31
+   183 0000:00003E35   185 0000:00003E3B   186 0000:00003E47   190 0000:00003E53
+   191 0000:00003E63   192 0000:00003E9B   193 0000:00003EAC   194 0000:00003EDC
+   195 0000:00003EF0   196 0000:00003F0C   198 0000:00003F2B   199 0000:00003F35
+   202 0000:00003F3F   205 0000:00003F43   207 0000:00003F49   208 0000:00003F4E
+   213 0000:00003F50   214 0000:00003F7F   215 0000:00003FAA   216 0000:00003FB6
+   211 0000:00003FBA   219 0000:00003FC0   221 0000:00003FD6   222 0000:00003FE5
+   224 0000:00004004   227 0000:0000401A
+     7 0000:0000401E     9 0000:00004034    10 0000:0000403F    16 0000:0000404F
+    17 0000:00004054    18 0000:0000406B    20 0000:00004091    23 0000:000040A1
+    24 0000:000040A6    25 0000:000040BD    26 0000:000040EB    34 0000:0000411F
+    36 0000:0000412E    37 0000:00004139    38 0000:00004142    39 0000:0000414B
+    40 0000:00004154    41 0000:0000415D    42 0000:00004166    44 0000:0000416F
+    47 0000:000041B9    48 0000:000041C6    49 0000:000041D9    50 0000:000041ED
+    52 0000:00004201    53 0000:0000420A    56 0000:00004257    57 0000:00004266
+    58 0000:00004275    59 0000:000042A6    60 0000:000042BC    65 0000:000042EE
+    68 0000:00004329    73 0000:00004334    76 0000:00004339    77 0000:00004346
+    78 0000:00004354    93 0000:000043B8    96 0000:000043C7    98 0000:000043D1
+   101 0000:000043DB   102 0000:00004418   104 0000:0000445F   106 0000:00004469
+   107 0000:0000447F   108 0000:000044C1   110 0000:000044CC   112 0000:000044D1
+   113 0000:000044E6   115 0000:000044EA   118 0000:000044EF   120 0000:000044F9
+   122 0000:00004507   123 0000:00004515   126 0000:00004519   130 0000:0000451E
+   132 0000:00004528   134 0000:0000453B   135 0000:00004544   136 0000:00004548
+   137 0000:0000454C   138 0000:00004557   139 0000:0000456A   141 0000:00004576
+   143 0000:00004580   146 0000:00004589   147 0000:00004599   149 0000:000045AF
+   151 0000:000045BC   154 0000:000045D6   156 0000:000045DB   157 0000:000045E1
+   160 0000:000045E5   162 0000:000045EA   163 0000:000045F7   164 0000:00004605
+   167 0000:00004609   169 0000:0000460E   170 0000:0000461C   174 0000:00004644
+   176 0000:00004653   178 0000:0000469A   179 0000:000046AE   181 0000:000046C8
+   182 0000:000046DE   186 0000:000046E9   190 0000:000046EF   193 0000:00004702
+   194 0000:0000470C   195 0000:00004730   196 0000:00004747   191 0000:00004751
+   199 0000:0000475F   201 0000:0000476B   204 0000:00004779   205 0000:00004783
+   206 0000:000047A7   207 0000:000047BE   202 0000:000047C8   210 0000:000047D6
+   211 0000:000047E0   215 0000:000047EA   216 0000:000047F6   217 0000:00004833
+   218 0000:0000483F   220 0000:0000486D   221 0000:00004877   227 0000:0000488E
+   230 0000:00004892   232 0000:00004898   233 0000:00004898   237 0000:000048A3
+   238 0000:000048C0   235 0000:000048C6   241 0000:000048D6   243 0000:000048DC
+   244 0000:00004900   246 0000:00004926   249 0000:00004935   255 0000:00004939
+   259 0000:00004940   260 0000:00004963   257 0000:00004986   262 0000:0000498B
+   265 0000:0000498F   269 0000:00004996   270 0000:000049C2   267 0000:000049EE
+   272 0000:000049F8   274 0000:000049FC   276 0000:00004A02   278 0000:00004A19
+   279 0000:00004A33   280 0000:00004A4E   281 0000:00004A58   282 0000:00004A64
+   283 0000:00004A6E   285 0000:00004A7A   286 0000:00004A91   287 0000:00004A9D
+   288 0000:00004AC3   289 0000:00004B18   290 0000:00004B42   291 0000:00004B5C
+   292 0000:00004B73   293 0000:00004B7D   295 0000:00004B89   299 0000:00004B8D
+   301 0000:00004B93   303 0000:00004BA2   305 0000:00004BB5   306 0000:00004BBB
+   308 0000:00004BC2   309 0000:00004BD9   310 0000:00004BE5   311 0000:00004BFC
+   312 0000:00004C51   313 0000:00004C6B   314 0000:00004C85   315 0000:00004C9C
+   316 0000:00004CA6   319 0000:00004CB2   326 0000:00004CDA   328 0000:00004CE9
+   330 0000:00004CEE   335 0000:00004D30   336 0000:00004D46   337 0000:00004D5C
+   338 0000:00004D75   339 0000:00004D96   340 0000:00004DB7   341 0000:00004DD8
+   342 0000:00004DF9   343 0000:00004E20   345 0000:00004E2A   347 0000:00004E31
+   348 0000:00004E36   349 0000:00004E4D   350 0000:00004E68   355 0000:00004E79
+   357 0000:00004E82   358 0000:00004E87   360 0000:00004E96   361 0000:00004EAB
+   362 0000:00004EB5   363 0000:00004EC4   365 0000:00004ECC   366 0000:00004EF2
+   367 0000:00004F04   368 0000:00004F15   373 0000:00004F26   375 0000:00004F35
+   376 0000:00004F46   377 0000:00004F57   378 0000:00004F68   379 0000:00004F79
+   380 0000:00004F88   385 0000:00004F8F   392 0000:00004FB7   394 0000:00004FC6
+   396 0000:00004FCB   400 0000:0000500D   401 0000:00005021   402 0000:0000502F
+   403 0000:00005045   404 0000:0000505B   405 0000:00005088   406 0000:000050A8
+   407 0000:000050CD   408 0000:000050F2   409 0000:00005116   410 0000:0000513A
+   411 0000:0000515E   413 0000:00005188   415 0000:00005192   417 0000:0000519B
+   418 0000:000051A0   420 0000:000051A7   422 0000:000051BB   423 0000:000051E7
+   424 0000:000051EA   426 0000:000051F1   428 0000:00005214   429 0000:00005239
+   430 0000:0000523B   432 0000:00005242   433 0000:00005256   434 0000:00005260
+   438 0000:00005274   440 0000:0000527D   441 0000:00005282   443 0000:00005291
+   444 0000:000052A6   446 0000:000052B7   447 0000:000052DD   448 0000:000052EE
+   449 0000:000052FF   452 0000:00005310   454 0000:0000531F   455 0000:00005330
+   456 0000:00005341   457 0000:00005352   458 0000:00005361   464 0000:00005368
+   473 0000:00005390   475 0000:0000539F   476 0000:000053A4   480 0000:000053E6
+   481 0000:000053FC   482 0000:0000540F   483 0000:00005425   484 0000:0000543B
+   485 0000:00005451   486 0000:0000546F   488 0000:0000548F   490 0000:00005499
+   492 0000:000054A0   494 0000:000054A5   495 0000:000054B4   496 0000:000054CD
+   499 0000:000054DE   501 0000:000054E7   503 0000:000054EC   505 0000:000054FB
+   506 0000:0000550C   507 0000:00005515   513 0000:0000551C   517 0000:00005520
+   519 0000:00005525   520 0000:0000552F   521 0000:00005539   522 0000:00005540
+   523 0000:00005545   526 0000:00005549   528 0000:0000554E   529 0000:00005562
+    32 0000:00005616    34 0000:00005625    35 0000:0000565C    36 0000:00005699
+    38 0000:000056D6    39 0000:00005715    42 0000:00005756    44 0000:00005796
+    45 0000:000057E4    46 0000:000057F2    48 0000:000057FC    49 0000:0000580A
+    54 0000:0000585E    75 0000:0000586D    79 0000:00005876    82 0000:000058CF
+    83 0000:000058D9    85 0000:000058E2    87 0000:000058E7    88 0000:000058F1
+    90 0000:000058FA    91 0000:00005938    92 0000:00005973    93 0000:000059AB
+    94 0000:000059B3    98 0000:000059C8   103 0000:000059D9
+    28 0000:00005B02
+    36 0000:00005B40
+   147 0000:00005BC7   151 0000:00005BCC   153 0000:00005BD0   155 0000:00005BD7
+   156 0000:00005BDE   157 0000:00005BEF   159 0000:00005BF4
+    33 0000:00005F5B
+    34 0000:00005F64
+    39 0000:00005F9F
+    22 0000:000060DC
+Program entry point at 0000:0000
+

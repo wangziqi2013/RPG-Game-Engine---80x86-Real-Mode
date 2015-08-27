@@ -1,0 +1,22 @@
+class Block
+{
+public:
+ virtual Block(const char *filename,SVGA *scr) = 0;
+ unsigned int tw; /* The total width of the map */
+ unsigned int th;   /* The total height of the map */
+ unsigned int x;
+ unsigned int y;    /* The coordinates of current viewport */
+ int w;
+ int h;             /* The dimension of each block */
+ int tl;                /* The lines of blocks(NOTICE: NOT PIXEL LINES) */
+ EMM xmsbuffer; /* There's no transparent color to the map */
+ bitmap *pic;       /* Control class for class Map */
+ char file[32]; /* To store the name of the bitmap file with a suffix */
+
+ unsigned int *data     /* To store whole map data (index) in the  */
+ int transparent;
+                        /* Empirically it's the last pixel on the map data file */
+
+ virtual void Draw() = 0;       /* This function will just draw an entire block */
+ virtual void Read() = 0;       /* Read the bmp file into XMS */
+};

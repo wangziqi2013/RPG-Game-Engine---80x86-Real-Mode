@@ -1,0 +1,30 @@
+
+#ifndef _STRING_H
+#include <string.h>
+#endif
+
+class Error
+{
+public:
+ Error(const char *info) { strcpy(errtext,info); }
+private:
+ virtual Print() const = 0;
+ char errtext[80];
+};
+
+
+
+class FatalError : public Error
+{
+public:
+ FatalError(const char *info) Error(info) {};
+ Print() const { printf(errtext); exit(0); }
+};
+
+
+class GeneralError : public Error
+{
+public:
+ GeneralError(const char *info) Error(info) {};
+ Print() const { printf(errtext); }
+};

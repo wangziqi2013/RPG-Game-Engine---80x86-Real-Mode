@@ -1,0 +1,251 @@
+#include ".\player\map.h"
+
+
+Map::~Map()
+{
+ delete pic;
+ if(access) delete []access;
+ return;
+}
+
+Map::Map(const char *filename,SVGA *scr,int ismap) : xmsbuffer(0)
+{
+ pic = new bitmap(filename,scr);
+ if(pic == NULL) FileNotFound("Cannot find map bitmap!");
+
+ th = pic->GetHeight();
+ tw = pic->GetWidth();
+ /* th and tw is the total height and width. With no other meaning(such as block size) */
+
+ char *temp;
+ if(ismap)
+ {
+  int len;
+  temp = new char[40];
+  strcpy(temp,filename);
+  len = strlen(temp);
+  temp[len - 1] = temp[ len - 3 ] = 't';
+  temp[len - 2] = 'x';
+  FILE *fp = fopen(temp,"r");
+  if(fp == NULL) FileNotFound("Cannot find access matrix");
+  access = new char[th * tw];
+  if(access == NULL) NotEnoughMemory();
+
+  for( int i = 0 ; i < (th / 32) * (tw / 32) ; i++ )
+  {
+	 int realvalue = NULL;
+	 char readvalue;
+	 while(1)
+	 {
+	  readvalue = fgetc(fp);
+	  if(readvalue == '\n' || readvalue == ',' || readvalue == EOF) break;
+	  realvalue = realvalue * 10 + readvalue - '0';
+	 }
+	 access[i] = realvalue;  /* Read in all access information */
+	 //printf("%u ",realvalue);
+	 //if(feof(fp)) break;
+  }
+  fclose(fp);
+  delete []temp;
+
+  //printf("%d blocks read.\n",i);
+  //while(1);
+ }
+ else access = NULL;
+
+ xmsbuffer.Allocate( (unsigned long)th * tw / 1000 + 1);
+ //printf("th = %u, tw = %u\n",th,tw);
+
+ dw = 640;dh = 480;
+ /* If that need to be changed then just modify it */
+ /* Default to draw the full screen                     */
+ /* When drawing whole objects, these two MUST be initialized */
+
+ /* transparent = (0,0) */
+ SetTransparent(0,0);
+ /* This will only be used in the DrawWithTrans function */
+ /* And should be set by the client */
+
+ //xmsbuffer.xms->Allocate((unsigned long)th * tw / 1024 + 1);
+ //printf("%lu",(unsigned long)th * tw / 1024 + 1);
+ //while(1);
+ Read();
+ /* Read in the total dimension of the map. It will be used in the World */
+ /* to control the movement of both player and map */
+ return;
+}
+
+
+
+void Map::SetXY(int px,int py)
+{
+ x = px;
+ y = py;
+}
+
+
+void Map::SetDrawWH(int pw,int ph)
+{
+ dw = pw;
+ dh = ph;
+}
+
+void Map::SetDrawWH(void)
+{
+ dw = pic->bihead.biwidth;
+ dh = pic->bihead.biheight;
+}
+
+
+/***********************************************************/
+/* This function will read the bitmap file into xms buffer */
+/* and we'll put one whole picture together and linearly   */
+/* in order to accelerate the display routine              */
+/***********************************************************/
+/* In general it needn't be called manually. The              */
+/* constructor has already called this function               */
+/***********************************************************/
+void Map::Read()
+{
+ int i;
+ int line;
+ unsigned char far *address;
+ unsigned long size;
+ unsigned long offset;
+
+ size = tw;
+ offset = 0;
+ address = (unsigned char far *)pic->line;      /* WE DON'T NEED TO FREE address */
+ /* For reading into anything we will use temporary space (and this executes only once) */
+ /* so efficiency is not an issue using free() and malloc() */
+ //For map file we must guarantee it will be transformed quickly
+ //printf("size = %lu\n",size);
+
+ for(line = 0 ; line < th ; line++ )
+ {
+  pic->ReadLine(line);
+  xmsbuffer.InfromNor(address,offset,size);
+  offset += size;
+ }
+
+ pic->Close();
+
+ return;
+}
+
+
+
+/*****************************************************************/
+/* This function will draw the whole screen without selection    */
+/* so if the map is smaller than the screen this will draw       */
+/* incorrectly. Plaese use another version of Draw() to achieve  */
+/*****************************************************************/
+/* NOTICE : The x and y here are to indicate the x and y position*/
+/*          ON THE BITMAP, NOT ON THE SCREEN!!!!!                     */
+/* But in other two functions the x, y is the position on SCREEN */
+/*****************************************************************/
+void Map::Draw()
+{
+ unsigned long soffset,doffset;
+ int line;
+
+ soffset = ( tw * (unsigned long)y ) + (unsigned long)x;    /* On the map (x,y) is identical to the bitmap (x,y) */
+ doffset = 0;
+ /* size = pic->bihead.width, we'll omit this to increase speed */
+ //address = (unsigned char far *)pic->line;
+
+ for(line = 0 ; line < dh ; line++ )   /* We know that we only need to refresh 480 lines */
+ {
+  xmsbuffer.OuttoXMS(pic->scr->xmsbuffer.handle,doffset,soffset,dw);
+  soffset += tw; /* soffset is the large bitmap, so if we want to switch line we must add its width */
+  doffset += 640; /* doffset is the SVGA buffer. We draw one line after another */
+ }
+
+ return;
+}
+
+
+/*****************************************************************/
+/* Usually this function do not need much speed so we can have   */
+/* parameters                                                                     */
+/*****************************************************************/
+void Map::DrawWithTrans(int color)
+{
+ int i,j;
+ unsigned long doffset, soffset; /* doffset is the offset on the SVGA xmsbuffer */
+
+ soffset = 0;
+ doffset = (unsigned long)y * 640 + (unsigned long)x;   /* x, y is usually 0,0 */
+
+ for( i = 0 ; i < dh ; i++ )
+ {
+  pic->scr->xmsbuffer.OuttoNor(buffer1,doffset,dw); /* First copy the screen buffer back to buffer1 */
+  xmsbuffer.OuttoNor(buffer2,soffset,dw);  /* Copy the bitmap to buffer2 */
+
+  for(j = 0;j < dw;j++)
+  {
+    if(color == -1) buffer1[j] = (buffer2[j] == transparent? buffer1[j] : buffer2[j]);
+    else buffer1[j] = (buffer2[j] == transparent? buffer1[j] : color);
+  }
+
+  pic->scr->xmsbuffer.InfromNor(buffer1,doffset,dw);
+  doffset += 640;
+  soffset += pic->bihead.biwidth;
+ }
+ return;
+}
+
+
+/**********************************************************************/
+/* It is an alias for DrawWithTrans with a parameter to indicate that */
+/* this will fill                                                     */
+/**********************************************************************/
+inline void Map::FillWithColor(int color)
+{
+ DrawWithTrans(color);
+}
+
+
+void Map::DrawOnXY()
+{
+ int i,j;
+ unsigned long doffset, soffset; /* doffset is the offset on the SVGA xmsbuffer */
+
+ soffset = 0;
+ doffset = ( 640 * (unsigned long)y ) + (unsigned long)x;
+
+ for( i = 0 ; i < dh ; i++ )
+ {
+  xmsbuffer.OuttoXMS(pic->scr->xmsbuffer.handle,doffset,soffset,dw);
+  soffset += pic->bihead.biwidth; /* soffset is the large bitmap, so if we want to switch line we must add its width */
+  doffset += 640; /* doffset is the SVGA buffer. We draw one line after another */
+ }
+ return;
+}
+
+
+
+void Map::SetTransparent(int line,int x)
+{
+ pic->ReadLine(line);
+ transparent = pic->line[0];
+}
+
+
+void Map::Shake()
+{
+ oldx = x;
+ oldy = y;
+ x += 12;
+ y -= 12;
+ if(x < 0) x = 0;
+ if(y < 0) y = 0;
+}
+
+void Map::UnShake()
+{
+ x = oldx;
+ y = oldy;
+}
+
+

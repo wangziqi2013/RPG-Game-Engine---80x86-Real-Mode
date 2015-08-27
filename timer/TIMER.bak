@@ -1,0 +1,174 @@
+void far interrupt ClockOn()
+{
+ asm cli
+ asm push bx
+ asm push ax
+ asm push cx
+
+ asm mov al, 'c'
+ asm mov bh, 00h
+ asm mov bl, 7h
+ asm mov cx, 1h
+ asm mov ah, 0Eh
+ asm int 10h
+
+ asm pop cx
+ asm pop ax
+ asm pop bx
+ asm sti
+}
+
+
+void far interrupt Void()
+{
+ asm iret
+}
+
+/* player_run == 1 means that player is still running(delay) */
+extern int player_run = 0;
+extern int player_changed = 0;
+void far interrupt KeepRun()
+{
+ if(player_run != 0)
+ {
+  player_run--;
+  player_changed = 1;
+  /* If the player is still running then we will change the state to indicate a clock arrive */
+ }
+}
+
+
+/***********************************************************/
+/* This function will set the interrupt vector 0x1C to the */
+/* ISR function                                            */
+/***********************************************************/
+/* We'll not use INT 8H directly, for we must know exactly */
+/* the old vector after entering ISR for INT 8H, but in    */
+/* Cpp we can't know it.                                   */
+/***********************************************************/
+void Timer::Install(far_ptr address)
+{
+ far_ptr int_8h_local;
+
+ asm push ax
+ asm push bx
+ asm push cx
+ asm push es
+
+ asm xor ax, ax
+ asm mov es, ax
+
+ asm cli
+
+ asm mov ax, 1Ch
+ asm mov cl, 2h
+ asm shl ax, cl
+ asm mov bx, ax
+
+ asm mov ax, es:[bx]
+ asm mov word ptr [int_8h_local], ax
+ asm mov ax, es:[bx+2]
+ asm mov word ptr [int_8h_local+2], ax
+
+ asm mov ax, word ptr [address]
+ asm mov es:[bx], ax
+ asm mov ax, word ptr [address+2]
+ asm mov es:[bx+2], ax
+
+ asm sti
+
+ asm pop es
+ asm pop cx
+ asm pop bx
+ asm pop ax
+
+ old_address = int_8h_local;
+
+ //printf("Timer installed\n");
+}
+
+
+
+
+/***********************************************************/
+/* This function will change the existing driver to a new  */
+/* one without modifying the stored previous address       */
+/***********************************************************/
+void Timer::Change(far_ptr address)
+{
+ asm push ax
+ asm push es
+ asm push bx
+ asm push cx
+
+ asm cli
+
+ asm xor ax, ax
+ asm mov es, ax
+
+ asm mov ax, 1Ch
+ asm mov cl, 2h
+ asm shl ax, cl
+ /* Because each item in the table is 4 bytes long */
+ asm mov bx, ax
+
+ asm mov ax, word ptr [address]
+ asm mov es:[bx], ax
+ asm mov ax, word ptr [address+2]
+ asm mov es:[bx+2], ax
+
+ asm sti
+
+ asm pop cx
+ asm pop bx
+ asm pop es
+ asm pop ax
+}
+
+
+
+
+/***********************************************************/
+/* This function will uninstall the ISR just installed on  */
+/* INT 0x1C. But we can also just use change() to set it   */
+/* a void ISR function (although a little bit overhead)    */
+/***********************************************************/
+void Timer::Uninstall(void)
+{
+ far_ptr int_8h_local = old_address;
+
+ asm push ax
+ asm push bx
+ asm push cx
+ asm push es
+
+ asm cli
+
+ asm xor ax, ax
+ asm mov es, ax
+
+ asm mov ax, 1Ch
+ asm mov cl, 2h
+ asm shl ax, cl
+ asm mov bx, ax
+
+ asm mov ax, word ptr [int_8h_local]
+ asm mov es:[bx], ax
+ asm mov ax, word ptr [int_8h_local+2]
+ asm mov es:[bx+2], ax
+
+ asm sti
+
+ asm pop es
+ asm pop cx
+ asm pop bx
+ asm pop ax
+}
+
+
+
+
+Timer::Timer(void far *address)
+{
+ Install(address);
+}

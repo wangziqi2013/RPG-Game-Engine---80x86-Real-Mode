@@ -1,0 +1,232 @@
+/**********************************************************/
+/* This function will go into INT 13H VGA 320*200    mode */
+/**********************************************************/
+void Screen::Init13H()
+{
+    asm push ax
+    asm push bx
+    asm push cx
+    asm mov ah, 00
+    asm mov al, 13h
+    asm int 10h
+    asm pop cx
+    asm pop bx
+    asm pop ax
+}
+
+
+/****************************************/
+/* This function will return to 3h mode */
+/****************************************/
+void Screen::Exit13H()
+{
+ asm push ax
+
+ asm mov al, 03h
+ asm mov ah, 00h
+ asm int 10h
+
+ asm pop ax
+}
+
+
+void Screen::Change(unsigned char mode)
+{
+ asm push ax
+
+ asm mov al, mode
+ asm mov ah, 00h
+ asm int 10h
+
+ asm pop ax
+}
+
+
+
+void Screen::DrawLine(unsigned char color,short int x,short int y,short int w,short int h)
+{
+ float inc_w = 0;
+ float inc_h = 0;
+ float xx = x;
+ float yy = y;
+
+ float end_w = x + w;
+ float end_h = y + h;
+
+ inc_w = 1.0*w / h;
+ inc_h = 1.0*h / w;
+
+
+ while(xx <= end_w && yy <= end_h)
+ {
+  DrawPixel(color,(short int)(xx),(short int)(yy) );
+  xx += inc_w;
+  yy += inc_h;
+ }
+}
+
+
+
+void Screen::DrawPixel(unsigned char color,short int x,short int y)
+{
+ asm push bx
+ asm push es
+ asm push ax
+ asm push dx
+ asm push cx
+
+ asm mov ax, 0A000h
+ asm mov es, ax
+
+ asm mov bx, x
+
+ asm mov ax, y
+ asm mov cl, 6h
+ asm shl ax, cl
+ asm mov dx, ax
+ asm mov cl, 2h
+ asm shl ax, cl
+ asm add ax, dx
+ asm add bx, ax
+
+ asm mov al, color
+ asm mov es:[bx], al
+
+ asm pop cx
+ asm pop dx
+ asm pop ax
+ asm pop es
+ asm pop bx
+}
+
+/*************************************************************/
+/* This function will draw a block (rectangle) on the screen */
+/*************************************************************/
+/* buffer : The size will not be checked (no way to check)   */
+/* x & y  : The x and y at the left and top point            */
+/* w & h  : Width and height of the rectangle                */
+/* Notice that w and h must be grater than 0 (not equal)     */
+/*************************************************************/
+void Screen::DrawBlock(void far *buffer,int x,int y,int w,int h)
+{
+ asm push bx
+ asm push es
+ asm push ds
+ asm push ax
+ asm push dx
+ asm push cx
+ asm push si
+
+ asm mov ax, 0A000h
+ asm mov es, ax
+
+ asm mov si, word ptr [buffer]
+ asm mov ax, word ptr [buffer+2]
+ asm mov ds, ax
+ asm cld
+
+ asm mov ax, y
+ asm mov cl, 6h
+ asm shl ax, cl
+ asm mov dx, ax
+ asm mov cl, 2h
+ asm shl ax, cl
+ asm add dx, ax
+ /* Now dx is the required line */
+ asm add dx, x
+ /* Now we have the left most pixel in dx */
+ asm mov bx, dx
+
+newline:
+ asm mov cx, w
+ asm cmp h, 0h
+ asm je end
+ asm dec h
+line:
+ asm lodsb
+ asm mov es:[bx], al
+ asm inc bx
+ asm loop line
+
+ asm add bx, 320d
+ asm sub bx, w
+ /* every time we add dx and bx with 320 to switch lines */
+ /* and the dx is always the next line offset address */
+ asm jmp newline
+
+end:
+ asm pop si
+ asm pop cx
+ asm pop dx
+ asm pop ax
+ asm pop ds
+ asm pop es
+ asm pop bx
+}
+
+
+/***************************************************************/
+/* This function is almost identical to the draw block routine */
+/* except the two copy instruction                             */
+/***************************************************************/
+/* buffer : The size will not be checked (no way to check)     */
+/* x & y  : The x and y at the left and top point              */
+/* w & h  : Width and height of the rectangle                  */
+/* Notice that w and h must be grater than 0 (not equal)       */
+/***************************************************************/
+void Screen::RetrieveBlock(void far *buffer,int x,int y,int w,int h)
+{
+ asm push bx
+ asm push es
+ asm push ds
+ asm push ax
+ asm push dx
+ asm push cx
+ asm push si
+
+ asm mov ax, 0A000h
+ asm mov es, ax
+
+ asm mov si, word ptr [buffer]
+ asm mov ax, word ptr [buffer+2]
+ asm mov ds, ax
+ asm cld
+
+ asm mov ax, y
+ asm mov cl, 6h
+ asm shl ax, cl
+ asm mov dx, ax
+ asm mov cl, 2h
+ asm shl ax, cl
+ asm add dx, ax
+ /* Now dx is the required line */
+ asm add dx, x
+ /* Now we have the left most pixel in dx */
+ asm mov bx, dx
+
+newline:
+ asm mov cx, w
+ asm cmp h, 0h
+ asm je end
+ asm dec h
+line:
+ asm mov al, es:[bx]
+ asm lodsb
+ asm inc bx
+ asm loop line
+
+ asm add bx, 320d
+ asm sub bx, w
+ /* every time we add dx and bx with 320 to switch lines */
+ /* and the dx is always the next line offset address */
+ asm jmp newline
+
+end:
+ asm pop si
+ asm pop cx
+ asm pop dx
+ asm pop ax
+ asm pop ds
+ asm pop es
+ asm pop bx
+}
